@@ -224,6 +224,7 @@ Mobile values are at 320–390 px; desktop at ≥1280 px. Fluid between with `cl
 - Uppercase Anton headings should be **short: at most ~6 words**, or 3 lines on mobile. Longer headings use `h3` Figtree.
 - One amber-highlighted word or line per heading at most, on dark surfaces only.
 - Don't use oversized type as decoration. Every Anton heading must say something real.
+- **Exception, record board (10.13):** Hall of Fame player names are H3s set in Anton upper (28 → 42 px, `clamp(1.75rem, 1.35rem + 1.5vw, 2.625rem)`, line height 1, tracking 0.01em). They are names, not running text, so the 28 px floor still holds. Use this nowhere else.
 - **Mobile:** H1 must fit in at most 4 lines at 390 px. Body stays 17 px (never reduced). Eyebrows stay 13 px. Allow `text-wrap: balance` on headings and `pretty` on paragraphs.
 
 ## 7. Layout and Spacing
@@ -269,7 +270,7 @@ Full-bleed is allowed for photo splits, dark bands and the amber band. The conte
   - The badge (white, 56 px, links home; `alt="Showtime Basketball Academy — home"`)
   - Nav links: **Programs ▾**, Memberships, About, Events, FAQs
   - Utility link **Members** (muted `neutral-400-dark`, `small`)
-  - The amber **Book a Free Session** button
+  - The amber **Get Started** button
 - **Typography:** `nav` white. Hover: amber 2 px underline 6 px below the text. Current page: persistent amber underline and `aria-current="page"`.
 - **Programs dropdown:** a disclosure **button** (`aria-expanded`). It opens on click or Enter/Space, not hover-only. The `charcoal-800` panel lists Overview, Academy, Fundamentalists and Individual Training, each with a one-line "who it's for" in `small` muted. Escape closes it and returns focus. Athletic Development is not listed until it launches.
 - **Behaviour:** static (not sticky) on desktop. That saves vertical space; the hero carries the CTA.
@@ -284,7 +285,7 @@ Full-bleed is allowed for photo splits, dark bands and the amber band. The conte
   - A full-width amber CTA pinned to the bottom (respects `safe-area-inset-bottom`)
   - Close button top right in the same position as Menu
 - **Accessibility:** use `inert` on the drawer when closed. On open, move focus to the first link, trap focus and lock body scroll. Escape closes and returns focus to Menu. Under reduced motion it opens with no animation, otherwise a 200 ms fade/slide.
-- **Persistent CTA bar:** after the hero CTA scrolls out of view, show a 64 px black bottom bar with a full-width amber **Book a Free Session** button. Hide it when the footer CTA or the drawer is visible. Implement with one small IntersectionObserver. It must not cover focused elements (add `scroll-padding-bottom`). On program pages, the bar uses that page's contextual CTA.
+- **Persistent CTA bar:** after the hero CTA scrolls out of view, show a 64 px black bottom bar with a full-width amber **Get Started** button. Hide it when the footer CTA or the drawer is visible. Implement with one small IntersectionObserver. It must not cover focused elements (add `scroll-padding-bottom`). On program pages, the bar uses that page's contextual CTA.
 
 ### 8.3 Secondary navigation
 
@@ -310,12 +311,14 @@ Full-bleed is allowed for photo splits, dark bands and the amber band. The conte
 
 ### 9.2 CTA vocabulary (from PRODUCT 7.4, pending B1)
 
+The generic enrollment CTA is **Get Started** (changed from "Get Started" on 2026-10-10). The free-session offer is verified only for small-group sessions and isn't confirmed for any specific program, so a button label must not promise it. State the offer in text, with its qualification ("Your first small-group session is free."), on Home and Get Started. The label is `primaryCta` in `lib/site.ts`; the offer copy is in `lib/enrollment.ts`.
+
 | Context | Primary | Secondary |
 |---|---|---|
-| Site-wide / Home / Fundamentalists | **Book a Free Session** | Compare programs |
-| Academy | **Apply for an Academy Evaluation** | Book a Free Session |
+| Site-wide / Home / Fundamentalists | **Get Started** | Compare programs |
+| Academy | **Apply for an Academy Evaluation** | Get Started |
 | Individual Training | **Book Individual Training** | Ask a question (inquiry) |
-| Memberships (prospects) | **Book a Free Session** | Member Login & Booking |
+| Memberships (prospects) | **Get Started** | Member Login & Booking |
 | Members utility | **Member Login & Booking** | — |
 
 **Never show "Book Memberships" or purchase links on first-visit surfaces** (B2).
@@ -331,6 +334,7 @@ Each component lists its purpose, composition, type, spacing, behaviour and mobi
 | **A. Split hero** (home) | The homepage | 7/5 split. Left: a black panel with eyebrow (`label` amber: e.g. "San Jose · Est. 2017"), H1 `display-xl` white, lead in `neutral-400-dark`, then primary + secondary CTAs and a single line "First session free" (wording per B1). Right: a photo running to the viewport edge at full panel height, `object-position` set per image. | Text panel first (CTA visible at 390×844 without scrolling), then the photo at 4:5. The photo is **not** the LCP blocker: the H1 is the LCP element. |
 | **B. Program hero** | Program pages | Black band: breadcrumb, H1 `display-lg`, **fact row** (Experience · Format · Frequency · From $X if approved) as 3–4 label/value pairs with 1 px dividers; contextual CTA. A photo sits beside it on desktop (5/12) or below the band as a 16:9 crop. | Fact row becomes a 2×2 grid. Photo below the CTA. |
 | **C. Simple page hero** | About, Memberships, Events, FAQs, Contact, Get Started | White or `neutral-100`, H1 `display-lg` in charcoal, lead, optional small photo or none. Compact: 64–80 px padding. | Same, stacked |
+| **D. Feature hero** (Hall of Fame only) | A recognition page with no photography | Black band, no eyebrow: H1 `display-lg` white, lead in `muted-dark`, and one amber `stat`-size figure (the player count, no leading zero, so it never echoes the row numbers) with a `label` caption, aligned right on desktop. It stays smaller than the player names: the people are the peak, not the count. Hidden when the list is empty. The page's one court arc (4.1) sits behind it, clipped to the band. A 2 px amber rule closes the band. Padding 48–80 px. The figure is `aria-hidden`, with a plain-language screen-reader equivalent ("5 players featured"). | Stacked: H1, lead, then the figure under a 1 px `line-dark` rule. |
 
 No full-screen (100vh) heroes. No text set directly on a high-key photo (see 11.4).
 
@@ -384,7 +388,7 @@ No full-screen (100vh) heroes. No text set directly on a high-key photo (see 11.
 - **Composition:** two side-by-side **plan tables** (Academy, Fundamentalists), each with three rows (Basic 1×/week, Essentials 2×/week, Plus 3×/week). The price is set in Anton `stat`. Visit counts and makeup caps go in `small`. **Do not** use three floating pricing cards with a "most popular" badge; nothing supports that claim.
 - **Required notice:** an `amber-100` notice above the tables: "Memberships are available after acceptance into the program" (policy S5). It has an info icon and a text label, so colour isn't the only signal.
 - **Policies:** verbatim policy text in `<details>` accordions below (Cancellations, Makeups, Refunds), each with a visible heading.
-- **CTA:** for prospects, **Book a Free Session**. A separate "Already a member? Member Login & Booking" text link.
+- **CTA:** for prospects, **Get Started**. A separate "Already a member? Member Login & Booking" text link.
 - **Mobile:** the tables stack. Tier name and price stay on one line.
 
 ### 10.8 Testimonials (only if verified)
@@ -396,13 +400,13 @@ No full-screen (100vh) heroes. No text set directly on a high-key photo (see 11.
 
 - **Purpose:** upcoming clinics and the community record.
 - **Composition:** a list of **event rows**. A date block on the left (`charcoal-800`, Anton day number in amber, month in `label` white) sits beside the title (`h3`), time and location, eligibility as a chip (e.g. "5th–8th grade", "Free"), and an RSVP CTA. Past events sit in a separate, quieter list (`neutral-600` text, no CTA).
-- **Empty state** (current reality, S9): a short message ("No upcoming events right now") plus **Book a Free Session** and a link to Instagram for announcements. No fake "coming soon" events.
+- **Empty state** (current reality, S9): a short message ("No upcoming events right now") plus **Get Started** and a link to Instagram for announcements. No fake "coming soon" events.
 - **Data:** from `events.ts` (PRODUCT 10).
 
 ### 10.10 Inquiry and enrollment CTA band
 
 - **Purpose:** the closing conversion moment on each page.
-- **Variants:** use **black** on most pages and the **amber** band only where the step rail isn't already amber.
+- **Variants:** use **black** on most pages and the **amber** band only where the step rail isn't already amber. Use **charcoal** (`surface="charcoal"`) when the page is already black-heavy above the band and a black band would merge into the black footer (Hall of Fame). It stays dark-surface: white H2, `muted-dark` text, the same buttons. `compact` (40–56 px padding) is allowed where the content above is short.
 - **Composition:** an Anton H2 (short), one supporting line, primary + secondary buttons, and a reassurance line in `small` (e.g. what happens after the inquiry, wording per B1). Left-aligned on desktop with the CTA group to the right. Stacked on mobile.
 - **One closing band per page.** Don't repeat booking banners (the audit found four on Memberships).
 
@@ -422,6 +426,15 @@ No full-screen (100vh) heroes. No text set directly on a high-key photo (see 11.
 - **FAQ accordion:** native `<details>`/`<summary>`. Summary in `h4` Figtree with a + / − indicator; 1 px rules between items.
 - **Chips/tags:** `label` type, 1 px `neutral-500` border, 2 px radius, no fill. On dark: white border.
 - **Placeholder marker** (for unverified content in dev): dashed 2 px `error` border, `[PLACEHOLDER — CLIENT INPUT NEEDED]` text. **Must never ship to production.** Add a build-time check in Phase 5–8.
+
+### 10.13 Record board (Hall of Fame)
+
+- **Purpose:** list recognised players and the stages of their basketball paths, with nothing implied that the source doesn't state.
+- **Composition:** a `label` H2 ("Player pathways") over a 2 px black rule, then an ordered list of rows separated by 1 px `neutral-300` rules. Each row has a quiet Anton numeral (28–32 px, `neutral-500`, no filled block, `aria-hidden`; the `<ol role="list">` carries the order). The order is the source order, **not a ranking**, so the numeral must never outweigh the name. Then the player's name (see 6.3 exception), and a `<dl>` of **only the stages the source lists**, in order (High school, College, Professional). Each stage has a visible `label` term over an `h4` value.
+- **No fixed columns.** A missing stage is omitted, never shown as an empty cell, a dash or "none". Blank cells under a column header read as "didn't reach that level".
+- **Responsive:** below 768 px the stages stack under the name. From 768 px they run left to right, joined by a 24 × 2 px black court-line connector (a CSS pseudo-element, so the `<dl>` stays valid). From 1024 px the stages share the name's row (`3rem | 20rem | 1fr`) and the connector **stretches** (minimum 24 px) so the last stage meets the row's right edge: the court line runs the length of the path. The stretching line is the `::before` of each later stage, placed as a grid item, so the `<dl>` keeps only `<dt>`/`<dd>` children.
+- **Empty list:** render neither the board nor the hero count.
+- **Data:** `lib/hall-of-fame.ts` only. Never add stages, years, statistics or awards (PRODUCT U6, CONTENT_NEEDED I11).
 
 ## 11. Photography and Imagery
 
@@ -504,7 +517,7 @@ Each page lists (1) objective, (2) hero, (3) sections, (4) photography, (5) CTA 
    7. **Facility / The Grove** photo split (16)
    8. Closing CTA band (black) + footer
 4. **Photography:** hero, 3 program thumbnails, one facility image, 3 headshots. **No image repeats.**
-5. **CTA:** Book a Free Session (hero, step rail, closing). Secondary: Compare programs.
+5. **CTA:** Get Started (hero, step rail, closing). Secondary: Compare programs.
 6. **Mobile:** CTA visible above the fold at 390×844. The program index omits photos. The sticky CTA bar appears after the hero. Total page length is roughly 8–9 screens at most.
 
 ### 12.2 About
@@ -513,7 +526,7 @@ Each page lists (1) objective, (2) hero, (3) sections, (4) photography, (5) CTA 
 2. **Hero:** C (white), with a short positioning lead.
 3. **Sections:** Story (Est. 2017; verified facts only, two-column text with a pull statement) → philosophy and L.E.A.D. (reuse 10.4, light variant) → leadership features → full coach grid → The Grove facility split → safety/trust block **only when provided (I15)** → closing CTA.
 4. **Photography:** headshots; coach-teaching action; facility.
-5. **CTA:** Book a Free Session.
+5. **CTA:** Get Started.
 6. **Mobile:** leadership features stack (photo above text). The coach grid is 2 columns.
 
 ### 12.3 Programs overview
@@ -522,7 +535,7 @@ Each page lists (1) objective, (2) hero, (3) sections, (4) photography, (5) CTA 
 2. **Hero:** C, with an H1 and one line framing the three programs.
 3. **Sections:** program index (10.2) → **comparison table** (10.3) → how to get started (white step rail) → Athletic Development "coming soon" notice → closing CTA.
 4. **Photography:** one per program row.
-5. **CTA:** Book a Free Session; per-row links to program pages.
+5. **CTA:** Get Started; per-row links to program pages.
 6. **Mobile:** comparison table becomes stacked blocks. A small client-side hash handler maps old `#academy`-style links (migration doc 4.2).
 
 ### 12.4 Academy
@@ -531,7 +544,7 @@ Each page lists (1) objective, (2) hero, (3) sections, (4) photography, (5) CTA 
 2. **Hero:** B, with a fact row: Experience (per B4) · Team requirement · 60-min sessions · From $240/mo (if approved).
 3. **Sections:** What it is (split with photo) → **Key performance indicators** as a numbered list (Anton numerals, 5 items, verbatim from S3) → **evaluation criteria** (three bold criteria: Coachability · Response to adversity & feedback · Cultural fit) → evaluation step rail → membership tiers (Academy table only) + acceptance notice → coaches → FAQ excerpts → closing CTA.
 4. **Photography:** defensive drill, academy session, team-level action. It should feel the most intense of the three program pages.
-5. **CTA:** **Apply for an Academy Evaluation**; secondary Book a Free Session (pending B1).
+5. **CTA:** **Apply for an Academy Evaluation**; secondary Get Started (pending B1).
 6. **Mobile:** fact row 2×2; KPIs as a vertical list; the sticky bar uses the Academy CTA.
 
 ### 12.5 Fundamentalists
@@ -540,7 +553,7 @@ Each page lists (1) objective, (2) hero, (3) sections, (4) photography, (5) CTA 
 2. **Hero:** B, with a fact row: 1+ year experience · 60-min group class · From $200/mo (if approved).
 3. **Sections:** What it is (split, warmer photo) → skills list (numbered rows) → "What a session looks like" (short text + 2-photo pair) → coaches (Lam, Ron; pending I6) → tiers + acceptance notice (B2) → **pathway to Academy** (a simple two-step visual: Fundamentalists → Academy, criteria as text) → closing CTA.
 4. **Photography:** `photo-shooting-form`, `photo-youth-coaching`. Younger, smiling, hands-on.
-5. **CTA:** Book a Free Session.
+5. **CTA:** Get Started.
 6. **Mobile:** photo pair becomes one image; the pathway visual stacks vertically.
 
 ### 12.6 Individual Training
@@ -558,7 +571,7 @@ Each page lists (1) objective, (2) hero, (3) sections, (4) photography, (5) CTA 
 2. **Hero:** C, with a lead that says acceptance comes first.
 3. **Sections:** acceptance notice → plan tables (10.7) → drop-ins (only confirmed prices; omit the Fundamentalists drop-in until C8) → policy accordions (verbatim) → keep an `id="how-to-become-a-member"` section linking to `/get-started` → members box (Member Login & Booking).
 4. **Photography:** none required (one small image at most). This page is information.
-5. **CTA:** prospects: Book a Free Session; members: Member Login & Booking (secondary style). **No purchase links** (B2).
+5. **CTA:** prospects: Get Started; members: Member Login & Booking (secondary style). **No purchase links** (B2).
 6. **Mobile:** tables stack. Accordions are full width. Prices stay legible at 32 px or more.
 
 ### 12.8 Events
@@ -567,7 +580,7 @@ Each page lists (1) objective, (2) hero, (3) sections, (4) photography, (5) CTA 
 2. **Hero:** C (compact).
 3. **Sections:** upcoming list or empty state (10.9) → past events list (Playmakers Clinic, CYS clinic) → follow on Instagram → closing CTA.
 4. **Photography:** event-labelled photos only, with consent. Otherwise none.
-5. **CTA:** event RSVP when an event exists; otherwise Book a Free Session.
+5. **CTA:** event RSVP when an event exists; otherwise Get Started.
 6. **Mobile:** date block sits above the title; chips wrap.
 
 ### 12.9 Get Started (primary enrollment page) and Contact
