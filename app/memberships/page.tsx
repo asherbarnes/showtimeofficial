@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { Notice, Placeholder } from "@/components/ui/Notice";
+import { Notice } from "@/components/ui/Notice";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { faqsById } from "@/lib/faqs";
@@ -86,7 +86,7 @@ export default function MembershipsPage() {
           </tbody>
         </table>
 
-        {flags.showPricing ? (
+        {flags.showPricing && (
           <div className="mt-12 grid max-w-4xl gap-10 md:grid-cols-2">
             <div id="drop-ins" className="scroll-mt-4">
               <h3 className="type-h3">Drop-in sessions</h3>
@@ -127,10 +127,6 @@ export default function MembershipsPage() {
                 </Button>
               </div>
             </div>
-          </div>
-        ) : (
-          <div className="mt-10 max-w-(--container-prose)">
-            <Placeholder>Pricing is ready to display once the client approves publishing it (CONTENT_NEEDED B5).</Placeholder>
           </div>
         )}
 
