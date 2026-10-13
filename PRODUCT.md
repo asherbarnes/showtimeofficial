@@ -1,7 +1,7 @@
 # Showtime Basketball Academy — Product Foundation
 
 > Primary reference for Showtime's business information, content and conversion journeys for the Next.js rebuild.
-> **Researched:** 2026-10-10. **Status:** draft; nothing here has been confirmed by the client yet.
+> **Researched:** 2026-10-10. **Pricing re-verified:** 2026-10-10 against Wix, Minos and Mindbody (section 6). **FAQs re-read in full:** 2026-10-10 (section 6.5). **Status:** draft; nothing here has been confirmed by the client yet.
 
 **Labels used throughout**
 
@@ -105,7 +105,7 @@ Imagery references are files under `assets/img/` (see section 12.4).
 | Key performance indicators | Finishing at the rim from various angles; perimeter and mid-range shooting off the dribble; physicality on protection and drives; defensive fundamentals (closeouts, box outs, gap and rotation); leadership and concise communication (S3) |
 | Format | 60-minute group sessions across Hoops 1–4. Minos session size "up to 25" (M4). Official site says small groups of up to six (S1). |
 | Schedule (Minos, 2026-10-10) | Mon–Sat. Weekday starts from 3 PM to 7 PM (Fridays included); Saturdays 10–11 AM. Times change, so link to Minos rather than hard-coding them. |
-| Pricing | Memberships: Basic $240/mo (1×/wk), Essential(s) $440/mo (2×/wk), Plus $600/mo (3×/wk). VERIFIED on both S5 and M2. Drop-in **$65**: "members only" on S5; $65/player on M4. |
+| Pricing | Memberships: Basic $240/mo (1×/wk), Essential(s) $440/mo (2×/wk), Plus $600/mo (3×/wk). VERIFIED on both S5 and M2 (re-checked 2026-10-10). Drop-in **$65**: "members only" on S5; $65/player on M4 and M3. Not listed on S15. See section 6. |
 | Enrollment | Selective. Must be accepted before buying a membership (S5). 5-step evaluation (S6, S7). See section 7. |
 | Registration URL | Inquiry/evaluation: `https://minosrec.com/showtime-basketball-academy/general-inquiry` (linked from S1). Memberships: M2. Class: `https://minosrec.com/showtime-basketball-academy/group-lesson/lesson/100`. |
 | Imagery | `photo-academy-session.png`, `photo-defensive-drill.png`, `photo-grove-session.png`, `photo-team-huddle.png` |
@@ -123,7 +123,7 @@ Imagery references are files under `assets/img/` (see section 12.4).
 | Skills | Two-handed ball handling and finishing; reliable stationary mid-range jump shot; on-ball and help defense; low/mid-post footwork; communication (S4) |
 | Format | 60-minute group class, Main Court; coach **Lam Pham**; session size "up to 25" (M5) |
 | Schedule (Minos, 2026-10-10) | Mon–Thu 5–6 PM; Sat 9–10 AM (M5) |
-| Pricing | Basic $200/mo (1×/wk), Essential(s) $330/mo (2×), Plus $400/mo (3×). VERIFIED on S5 and M2. Drop-in **CONFLICTING**: $55 "members only" (S5) vs $60/player (M3, M5). |
+| Pricing | Basic $200/mo (1×/wk), Essential(s) $330/mo (2×), Plus $400/mo (3×). VERIFIED on S5 and M2 (re-checked 2026-10-10). S15 lists a different set (section 6.2). Drop-in **CONFLICTING**: $55 "members only" (S5, S15) vs $60 (M3, M5, MB1). |
 | Enrollment | **Unclear** whether evaluation is required. S5 says acceptance is needed before any membership; the FAQ (S7) describes evaluation only for "our Academy". CLIENT INPUT. |
 | Cancellation | Different from Academy: advance notice only, no rollover, makeups within the billing period (S7) |
 | Imagery | `photo-ballhandling-drill.png`, `photo-youth-coaching.png`, `photo-shooting-form.png` |
@@ -158,6 +158,7 @@ Imagery references are files under `assets/img/` (see section 12.4).
 The evidence is suggestive but not proof:
 - **Coach Jorge — "Head of Select Development"** (S2, official)
 - An Instagram post embedded on the repo's Academy section shows a **"SELECT"** graphic (`instagram.com/p/DVhbzSeD7V_/`)
+- The Mindbody class schedule for the week of 2026-10-05 (MB2) includes a 90-minute **"Select"** class, and age-group classes named 10U–17U BOYS/GIRLS. Those don't appear on Minos, which lists Academy groups as "G - Silver 2", "B - Silver 1", "B - Gold 1" and so on.
 - A Bay Hoops directory lists **"Showtime - SBA"** as an AAU, competitive program, boys and girls, ages 10–18, "approx $400/mo", at 2099 S 10th St Unit 90. It was added 2025-03-05 and is third-party (X1).
 - The `/how-to` page refers to placement into "**Academy tiers**" (S6), and the Minos Academy class is named "**G - Silver 2**" (M4). Levels exist, but nothing explains them.
 
@@ -169,16 +170,54 @@ There is tension with the official "not an AAU-first program" positioning. **Do 
 
 ## 6. Memberships and Pricing
 
-| Plan | Academy | Fundamentalists | Status |
-|---|---|---|---|
-| Basic, 1×/week (4/month) | $240/mo | $200/mo | VERIFIED (S5 = M2) |
-| Essential / Essentials, 2×/week (8/month) | $440/mo | $330/mo | VERIFIED price; **name CONFLICTING** ("ESSENTIAL" on S5, "Essentials" on M2 and S7) |
-| Plus, 3×/week (12/month) | $600/mo | $400/mo | VERIFIED (S5 = M2) |
-| Drop-in | $65 (members only on S5; $65 on M4) | **$55** (S5) vs **$60** (M5) | CONFLICTING for Fundamentalists |
-| Individual Training (1:1, 60 min) | $80 Academy Coach / $100 Master Coach | | VERIFIED (M6, M7) |
+**Verified 2026-10-10** by reading each source directly: Wix `/memberships` (S5), Wix `/pricing-plans/list` (S15), Minos memberships and sessions (M2–M7), and the Mindbody store the Wix "PURCHASE" buttons link to (MB1). No purchase was attempted.
 
-**Rules**
-- "You must be accepted into the program before purchasing a membership." (S5, VERIFIED official statement.) Minos nonetheless shows public **Purchase** buttons. Whether Minos enforces acceptance is unknown; testing it would need an account and a purchase, so it was not tested.
+### 6.1 Prices shown on the new site (agree across current sources)
+
+| Offering | Sessions | Academy | Fundamentalists | Sources | Status |
+|---|---|---|---|---|---|
+| **Basic** membership | 1 per week · 4 per month | $240/month | $200/month | S5, M2 | VERIFIED |
+| **Essentials** membership | 2 per week · 8 per month (Minos: "up to 2 sessions per week") | $440/month | $330/month | S5, M2 | VERIFIED price; **name CONFLICTING** ("ESSENTIAL" on S5; "Essentials" on M2, S7), C9 |
+| **Plus** membership | 3 per week · 12 per month (Minos: "up to 3 sessions per week") | $600/month | $400/month | S5, M2 | VERIFIED |
+| Drop-in (members only) | 1 session | **$65** | **$55 or $60** | Academy: S5, M3, M4. Fundamentalists: see C8 | Academy VERIFIED; Fundamentalists **CONFLICTING** |
+| Individual Training, 1-on-1, 60 min | per session | $80 with an Academy Coach · $100 with a Master Coach | | M3, M6, M7, MB1 | VERIFIED |
+
+- Plans are monthly ("per month" on S5; "Monthly" on M2). No discounts, packages, sibling rates, contracts or sign-up fees appear on any source. Don't add any.
+- Wix lists sessions per week and per month. Minos says "up to" N sessions per week for Essentials and Plus, and "1x/week" for Basic.
+- The new site shows the VERIFIED prices above, behind `flags.showPricing` (turned on 2026-10-10 at the agency's direction). It does **not** show a Fundamentalists drop-in price until C8 is resolved.
+
+### 6.2 The `/pricing-plans/list` catalogue (S15): conflicting, probably legacy
+
+S15 is a live Wix Pricing Plans page. It isn't in the site navigation, and neither the homepage nor the FAQ page links to it. The Wix `pricing-plans-sitemap.xml` (S16) lists only `/pricing-plans/do-not-go-here` (lastmod 2026-05-28), while the main pages' lastmod is 2026-09-18. It shows:
+
+| Plan on S15 | Price | Details on S15 | Matches S5/M2? |
+|---|---|---|---|
+| Fundamentalist: Drop-In | $55 | "Valid for 7 days", 1-day drop-in, 1-hour class | Matches S5 ($55); conflicts with M5/MB1 ($60) |
+| Fundamentalist: Basic Membership | $200 every month | 1 class per week, 1-hour class | Yes |
+| Fundamentalist: Plus Membership | $400 every month | "2 Classes A Week + A Saturday" | Same price; the frequency is worded differently from S5/M2's "3 per week" |
+| Fundamentalist: Premium Plan | $600 every month | "Attendance: Up to 5x A Week" | **Not on S5 or M2** |
+| Select & Elite: Drop-In | $77 | "Access to Our Select OR Elite Classes", 1.5-hour class, valid 7 days | **Not on S5 or M2** |
+| Select & Elite: Basic Membership | $300 every month | 1 class per week, 1.5-hour class | **Not on S5 or M2** |
+| Select & Elite: Plus Membership | $600 every month | 2 classes a week + a Saturday | **Not on S5 or M2** |
+| Select & Elite: Premium Membership | $900 every month | Up to 5× a week | **Not on S5 or M2** |
+
+- S15 has **no Academy plans** and **no Fundamentalists Essentials** plan.
+- S15 also says: "Memberships can only be purchased by those who have been accepted into the program." It adds: "We only accept the payment through Debit/Credit Cards or Apple/Google Pay."
+- **Don't publish anything from S15** that isn't also on S5 and M2, especially Select & Elite (section 5.5, C12). Recorded as C13.
+
+### 6.3 Purchase destinations
+
+| Destination | What it offers (2026-10-10) | Use on the new site |
+|---|---|---|
+| Minos memberships (M2) | All six Academy and Fundamentalists plans, with public "Purchase" buttons | **Accepted families only**, labelled as such on `/memberships` (B2) |
+| Minos sessions (M3) | Academy class $65, Fundamentalists class $60, Individual Training $80/$100 | Member Login & Booking; Individual Training booking (M6, M7) |
+| Mindbody (MB1), linked from the S5 "PURCHASE" buttons | A generic store. "FUNDAMENTALISTS" offers only "Fundamentalists: Drop-In $60.00"; "Personal Training" offers Individual Training $80 and $100. **No membership products.** | **Don't link.** The S5 purchase buttons don't lead to the memberships they sit under. |
+
+### 6.4 Rules
+
+**Source:** the policies below come from the official FAQ page (S7), which is authoritative for them (6.5).
+
+- "You must be accepted into the program before purchasing a membership." (S5, VERIFIED official statement; re-checked 2026-10-10.) S15 says the same: "Memberships can only be purchased by those who have been accepted into the program." Minos nonetheless shows public **Purchase** buttons. Whether Minos enforces acceptance is unknown; testing it would need an account and a purchase, so it was not tested.
 - Makeup credit caps: Basic 1, Essentials 2, Plus 3. These are Academy rules. (S7)
 - Academy cancellation: more than 6 hours' notice converts the session to a makeup credit; within 6 hours it is lost unless there is a legitimate reason; no-call no-shows get no makeup; coach cancellation means a makeup the same week or a prorated refund; a medical pause is available after more than 2 weeks, with written notice. (S7)
 - Fundamentalists: advance notice only; no rollover; makeups within the billing period. (S7)
@@ -186,7 +225,26 @@ There is tension with the official "not an AAU-first program" positioning. **Do 
 - Cancelling or suspending a membership "must be done through us… Please email us" (S7). **No email is published anywhere.**
 - Minos per-session cancellation, "up to 1 day before… full refund" (M5–M7), **differs from the FAQ's 6-hour rule**. They may cover different products. CLIENT INPUT.
 
-**Publishing:** prices are already public on S5 and M2. The repo hides them. Whether to show them is CLIENT INPUT, but the recommendation is to show them.
+**Publishing:** prices are already public on S5 and M2. The new site shows the VERIFIED prices in 6.1 as of 2026-10-10 (agency decision). The client should still confirm them before launch (CONTENT_NEEDED B5).
+
+### 6.5 Official FAQs (S7): authoritative source for FAQ content and policies
+
+**The official FAQ page, https://www.showtimebasketballacademy.com/showtime-faqs (S7), is the authoritative source for FAQ content and for the cancellation, make-up, membership-cancellation, refund, drop-in and referral policies.** When another source disagrees with S7, record the conflict (section 14) rather than overriding S7. Read in full on 2026-10-10. It has exactly **8 questions**:
+
+| # | Question (verbatim) | Substance | New site |
+|---|---|---|---|
+| 1 | How do I sign up? | Academy is selective; screening comes **before** purchase. 5 steps: apply for the Academy Evaluation, team member reaches out and sends an evaluation email, evaluation, results if coaches feel the child brings "the positive energy and impact we are looking for", then membership details are sent and the family can purchase. | Verbatim. The "here" link points to `/inquire`, which **returns 404**; the new site uses the Minos general inquiry (C15). |
+| 2 | What is the cancellation and make-up policy? | Academy only: more than 6 hours' notice converts to a makeup credit; within 6 hours the session is lost unless there is a legitimate reason (injury, sickness); makeups don't expire while enrolled; caps are Basic 1, Essentials 2, Plus 3; no makeup for no-call no-shows; coach cancellations mean a same-week makeup, or a choice of prorated refund or same-week reschedule; medical pause after more than 2 consecutive weeks, with written notice. Fundamentalists: advance notice only, no rollover, makeups within the billing period. | Verbatim (also on `/memberships`) |
+| 3 | How do I cancel a session? | 6 steps in the **Mindbody** Client Portal (My Info → My Schedule → cancel; rebook under "Classes") | **Not published.** Interim note pointing to Member Login & Booking and the inquiry form (C16) |
+| 4 | How do I purchase a drop-in? | Wix Memberships page → scroll to the bottom → select the drop-in (logged into the child's account). Those buttons open **Mindbody**. | **Not published.** Same interim note (C16) |
+| 5 | How do I cancel/suspend my membership? | Must be done "through us. Please email us". **No email address is published** (B8). | Verbatim, plus a note to send an inquiry until an email is published |
+| 6 | How do refunds work? | Membership cancellations only: full refund within 7 days of payment, half within 14 days, none after "15+ days". "Please notify us if you decide to cancel your membership." | Verbatim. Day 14–15 is undefined (I12). |
+| 7 | Do you accept drop ins? | "Yes, we accept drop-ins." Links to the Memberships page. | Verbatim; links to `/memberships#drop-ins` |
+| 8 | How do I refer a friend that's interested? | Non-enrolled teammates, friends or peers may attend **one free trial session**, which also lets staff evaluate fit. | Verbatim |
+
+The new site groups them as Getting started (1, 8), Cancellations and make-ups (2, 3), Drop-ins (7, 4), and Memberships and refunds (5, 6). Content lives in `lib/faqs.tsx`. **No other FAQs are published**; the repo-only FAQs (section 12.1, I16) remain excluded.
+
+**Booking platform (checked 2026-10-10 for questions 3 and 4):** Mindbody's class schedule (MB2) has classes through the week of 5–10 October 2026 and **no classes from 12 October onward**, checked through 22 November 2026. Minos has Academy and Fundamentalists sessions from 12 October onward (M3–M5). **Minos is the current booking platform for upcoming sessions.** The cut-over date is inferred from the schedules and not confirmed by the client (C4). Mindbody's click-paths are therefore not published.
 
 ## 7. Enrollment and Conversion Journeys
 
@@ -213,7 +271,7 @@ There is tension with the official "not an AAU-first program" positioning. **Do 
 | Platform | Role | Status |
 |---|---|---|
 | **Minos Rec** (`minosrec.com/showtime-basketball-academy/…`) | Inquiry, memberships, sessions, 1:1 lessons, court rentals, member login and account | **Current**: live schedules with October 2026 dates. Linked from the official homepage. |
-| **Mindbody** (studioid 5742717) | The Wix membership "PURCHASE" buttons and the FAQ session-cancel instructions | **Likely legacy**: no live evidence (it returns 403 to automated checks). CLIENT INPUT. |
+| **Mindbody** (studioid 5742717) | The Wix membership "PURCHASE" buttons and the FAQ session-cancel and drop-in instructions | **Winding down**: a class schedule through the week of 2026-10-05, nothing from 2026-10-12 (MB2). Store: one Fundamentalists drop-in ($60) and Individual Training ($80/$100); no memberships (6.3). Retirement: CLIENT INPUT. |
 | **Wix forms** | Waiver (`/waiver`) and Individual Training Inquiry (`/individualtraininginquiries`) | Current on Wix. **Lost at migration** unless replaced. |
 | Website waiver | Disabled locally in the P0 pass. The page directs families to the Minos inquiry form for instructions. | Interim |
 
@@ -223,20 +281,20 @@ URLs shown were all checked on 2026-10-10. Lowercase journey letters match the a
 
 | Journey | Entry | Needs | Recommended CTA | Next step / verified destination | Uncertainties |
 |---|---|---|---|---|---|
-| **a. New family exploring** | Home, search, social | What Showtime is, who it's for, where, cost, first step | **"Book a Free Session"** (official offer wording) | `/get-started` explainer, then `minosrec.com/showtime-basketball-academy/general-inquiry` | Free session vs evaluation; who receives the free session |
+| **a. New family exploring** | Home, search, social | What Showtime is, who it's for, where, cost, first step | **"Get Started"** (generic; the free small-group offer is stated beside it, B1) | `/get-started` explainer, then `minosrec.com/showtime-basketball-academy/general-inquiry` | Free session vs evaluation; who receives the free session |
 | **b. Prospective Academy athlete** | Home, Programs, Academy page | Requirements (experience, team), the evaluation, tiers, price | **"Apply for an Academy Evaluation"** | Same Minos inquiry, which the official FAQ links as the evaluation application | 2.5 vs 3+ years; whether a dedicated evaluation form exists |
-| **c. Prospective Fundamentalists athlete** | Home, Programs, Fundamentalists page | Is my child ready (1+ year)? Price, schedule | **"Book a Free Session"** | Minos general inquiry | Whether acceptance or evaluation applies; ages |
+| **c. Prospective Fundamentalists athlete** | Home, Programs, Fundamentalists page | Is my child ready (1+ year)? Price, schedule | **"Get Started"** | Minos general inquiry | Whether acceptance or evaluation applies; ages |
 | **d. Individual training prospect** | Programs, Individual Training page | Coach levels, price, duration, booking | **"Book Individual Training"** (direct) plus a secondary "Ask a question" | `minosrec.com/showtime-basketball-academy/lesson/99` ($80) and `/lesson/101` ($100); inquiry as fallback | Is direct booking allowed for new families? Small-group IT? |
 | **e. Existing member** | Header "Members" link, footer, FAQ | Log in, book, cancel, drop-in, policies, waiver | **"Member Login & Booking"** | `minosrec.com/showtime-basketball-academy/sessions` (Login is a button on Minos; there is no direct login URL) | Mindbody still in use? Correct cancel steps? |
 | **f. Event visitor** | Events page, social | Upcoming events, eligibility, RSVP | Event-specific RSVP | None currently (no upcoming events). Past events used Wix Events. | Future RSVP tool once Wix is gone |
 
 ### 7.4 Recommended conversion structure (UX recommendation, not Showtime policy)
 
-1. **One primary CTA site-wide: "Book a Free Session"**, pointing to `/get-started`. The header button may link straight to the Minos inquiry to save a click; test this in the build. Remove "Book Memberships", "Book Sessions" and "Book Online" from first-visit surfaces.
+1. **One primary CTA site-wide: "Get Started"**, pointing to `/get-started`. (Changed from "Get Started" on 2026-10-10: the free offer is verified only for small-group sessions, and which programs qualify is unconfirmed, B1.) The header button may link straight to the Minos inquiry to save a click; test this in the build. Remove "Book Memberships", "Book Sessions" and "Book Online" from first-visit surfaces.
 2. **The `/get-started` page explains the path in plain steps:** inquire → free session or evaluation → placement → membership. Use neutral wording until Q-B1 is answered, e.g. "Start with a free session. Academy placement is confirmed through an evaluation."
 3. **Program pages carry a contextual CTA**:
    - Academy: "Apply for an Academy Evaluation"
-   - Fundamentalists: "Book a Free Session"
+   - Fundamentalists: "Get Started"
    - Individual Training: "Book Individual Training"
 4. **Show pricing transparently** on `/memberships`, labelled "available after acceptance", if approved. Membership purchase links appear only in member-facing contexts.
 5. **Separate the member utility path**: a "Members" link in the header and footer goes to Minos sessions and login, plus policies.
@@ -271,7 +329,7 @@ URLs shown were all checked on 2026-10-10. Lowercase journey letters match the a
 | 1:1 w/ Academy Coach | `https://minosrec.com/showtime-basketball-academy/lesson/99` | 200 |
 | 1:1 w/ Master Coach | `https://minosrec.com/showtime-basketball-academy/lesson/101` | 200 |
 | Court rentals | `https://minosrec.com/showtime-basketball-academy/spaces` | 200 |
-| Mindbody (legacy?) | `https://clients.mindbodyonline.com/classic/ws?studioid=5742717…` | Unverifiable (403 bot check) |
+| Mindbody (legacy?) | `https://clients.mindbodyonline.com/classic/ws?studioid=5742717…` | Loads (2026-10-10); no membership products. Don't link. |
 | Wix IT inquiry form | `https://www.showtimebasketballacademy.com/individualtraininginquiries` | 200; lost at migration |
 | Wix waiver form | `https://www.showtimebasketballacademy.com/waiver` | 200; lost at migration |
 | The Grove | `https://www.thegrove.work/` | 200 |
@@ -368,27 +426,27 @@ URLs shown were all checked on 2026-10-10. Lowercase journey letters match the a
 - Events
 - FAQs
 - Members (utility link)
-- **[Book a Free Session]** button
+- **[Get Started]** button
 
-**Mobile:** the same items in the drawer, plus a persistent "Book a Free Session" CTA.
+**Mobile:** the same items in the drawer, plus a persistent "Get Started" CTA.
 
 | Page | URL | Purpose | Primary audience | Primary CTA | Essential content | Launch tier |
 |---|---|---|---|---|---|---|
-| Home | `/` | Position Showtime; route to the right program; push the free session | A, B | Book a Free Session | Positioning, program chooser, how it works (steps), coaches teaser, facility, trust, location | **Core** |
-| Programs | `/programs` | Compare programs and pick one | A, B, C | Book a Free Session | Comparison (who for, experience, format, frequency, price), Athletic Development "coming soon" note | **Core** |
+| Home | `/` | Position Showtime; route to the right program; push the free session | A, B | Get Started | Positioning, program chooser, how it works (steps), coaches teaser, facility, trust, location | **Core** |
+| Programs | `/programs` | Compare programs and pick one | A, B, C | Get Started | Comparison (who for, experience, format, frequency, price), Athletic Development "coming soon" note | **Core** |
 | Academy | `/programs/academy` | Explain and qualify Academy | B | Apply for an Academy Evaluation | Requirements, KPIs, evaluation criteria and steps, tiers and pricing, schedule link, coaches | **Core** |
-| Fundamentalists | `/programs/fundamentalists` | Explain the entry program | A, C | Book a Free Session | Requirements (1+ yr), skills, format, pricing, schedule link, pathway to Academy | **Core** |
+| Fundamentalists | `/programs/fundamentalists` | Explain the entry program | A, C | Get Started | Requirements (1+ yr), skills, format, pricing, schedule link, pathway to Academy | **Core** |
 | Individual Training | `/programs/individual-training` | Sell 1:1 | D | Book Individual Training | Focus areas, coach levels and prices, cancellation, booking links | **Core** |
 | Get Started | `/get-started` | The enrollment explainer (replaces "How to Become a Member") | A, B, C | Send an Inquiry (Minos) | Steps, free session, evaluation, acceptance, membership, waiver; what to bring | **Core** |
-| Memberships | `/memberships` | Plans, pricing (if approved) and policies | C | Book a Free Session (prospects) / Member Login (members) | Tiers, drop-ins, acceptance rule, makeups, refunds | **Core** |
-| About | `/about` | Trust: story, philosophy, L.E.A.D., coaches, facility | A | Book a Free Session | Est. 2017, philosophy, values, leadership bios, staff roster, The Grove | **Core** |
+| Memberships | `/memberships` | Plans, pricing (if approved) and policies | C | Get Started (prospects) / Member Login (members) | Tiers, drop-ins, acceptance rule, makeups, refunds | **Core** |
+| About | `/about` | Trust: story, philosophy, L.E.A.D., coaches, facility | A | Get Started | Est. 2017, philosophy, values, leadership bios, staff roster, The Grove | **Core** |
 | FAQs | `/faqs` | Policies and how-to | C, E | Contextual | Official FAQs corrected for the current platform | **Core** |
 | Waiver | `/waiver` | Waiver text and interim instructions | E | Send an Inquiry | Unchanged legal text; interim instructions (P0) | **Core** (must survive) |
 | Contact | `/contact` | Location, directions, contact routes | A, E | Send an Inquiry | Address, map, verified contact methods only | **Core** (lightweight) |
 | Members | `/members` | Utility hub for existing families | E | Member Login & Booking | Minos links, cancel and makeup steps, drop-ins, waiver, policies | **Secondary** (can launch as a section of `/faqs`) |
-| Events | `/events` | Upcoming and past events | F | Event RSVP / Book a Free Session | Data-driven list, empty state | **Secondary** |
+| Events | `/events` | Upcoming and past events | F | Event RSVP / Get Started | Data-driven list, empty state | **Secondary** |
 | Athletic Development | `/programs/athletic-development` | Program page | B | Notify / Inquire | Pending launch details | **Deferred** |
-| Hall of Fame | `/hall-of-fame` | Player pathways | A | n/a | Verified, consented entries only | **Deferred** (unlisted, noindex) |
+| Hall of Fame | `/hall-of-fame` | Player pathways | A | n/a | Client-confirmed entries (consent pending) | **Secondary** (in nav; noindex until publication approval) |
 | Select / Teams | TBD | Possible team program | B | TBD | Pending client | **Deferred** |
 | Privacy | `/privacy` | Required if analytics or forms are added | All | n/a | Client- or counsel-provided text | **Deferred** (client) |
 | 404 | `not-found` | Recovery | All | Home / Programs | Branded, with links | **Core** |
@@ -452,7 +510,7 @@ All accessed 2026-10-10. The Wix sitemap shows lastmod 2026-09-18 for all pages.
 | S4 | https://www.showtimebasketballacademy.com/fundamentalists |
 | S5 | https://www.showtimebasketballacademy.com/memberships |
 | S6 | https://www.showtimebasketballacademy.com/how-to (steps in the image `static.wixstatic.com/media/52022b_e7afdbfcd8e142708b760458fc712820~mv2.png`) |
-| S7 | https://www.showtimebasketballacademy.com/showtime-faqs |
+| S7 | https://www.showtimebasketballacademy.com/showtime-faqs (**authoritative for FAQ content and policies**; 8 questions; read in full 2026-10-10) |
 | S8 | https://www.showtimebasketballacademy.com/individualtraining |
 | S9 | https://www.showtimebasketballacademy.com/event-list |
 | S10 | https://www.showtimebasketballacademy.com/event-details/playmakers-clinic-2025-03-01-13-00 |
@@ -460,6 +518,8 @@ All accessed 2026-10-10. The Wix sitemap shows lastmod 2026-09-18 for all pages.
 | S12 | https://www.showtimebasketballacademy.com/individualtraininginquiries |
 | S13 | https://www.showtimebasketballacademy.com/coming-soon-01 (and the empty `/athleticdevelopment`) |
 | S14 | https://www.showtimebasketballacademy.com/waiver |
+| S15 | https://www.showtimebasketballacademy.com/pricing-plans/list (Wix Pricing Plans; unlinked; accessed 2026-10-10) |
+| S16 | https://www.showtimebasketballacademy.com/pricing-plans-sitemap.xml (lists only `/pricing-plans/do-not-go-here`, lastmod 2026-05-28) |
 | M1 | https://minosrec.com/showtime-basketball-academy/home |
 | M2 | https://minosrec.com/showtime-basketball-academy/memberships |
 | M3 | https://minosrec.com/showtime-basketball-academy/sessions |
@@ -467,6 +527,8 @@ All accessed 2026-10-10. The Wix sitemap shows lastmod 2026-09-18 for all pages.
 | M5 | https://minosrec.com/showtime-basketball-academy/group-lesson/lesson/98 (Fundamentalists) |
 | M6 | https://minosrec.com/showtime-basketball-academy/lesson/99 (1:1 Academy Coach) |
 | M7 | https://minosrec.com/showtime-basketball-academy/lesson/101 (1:1 Master Coach) |
+| MB2 | https://clients.mindbodyonline.com/classic/ws?studioid=5742717&stype=-7 (class schedule; weeks of 2026-10-05 to 2026-11-16 checked on 2026-10-10) |
+| MB1 | https://clients.mindbodyonline.com/classic/ws?studioid=5742717&stype=41&sTG=24&prodId=100028 and `…sTG=23&prodId=100027` (the S5 "PURCHASE" links; accessed 2026-10-10) |
 | G1 | https://www.thegrove.work/ |
 | X1 | https://bayhoops.com/listing/showtime-sba/ (third-party, added 2025-03-05) |
 | R1 | Repo `research/site-audit.md` (Phase 1) |
@@ -480,21 +542,26 @@ Yelp (`yelp.com/biz/showtime-basketball-academy-san-jose`, "13 Reviews" per sear
 | C1 | Academy experience | "2.5+ years" (S1 card) vs "3+ years" (S3, M2, M4) | 3+ appears in the live booking system and the dedicated program page; 2.5+ only on a summary card | **Unresolved.** 3+ is better supported; confirm. Interim copy: "experienced players (typically 3+ years)", or a neutral equivalent. |
 | C2 | Team requirement | "on a club or school team" (S3); "currently competing on a club or school team" (M2, M4); repo says "often" | Consistent across official sources; the repo is the outlier | Treat as an official requirement; confirm whether it is strict |
 | C3 | Values | L.E.A.D. (S2, S3, S4) vs H.E.L.D. (S9, March 2025 recap) | L.E.A.D. is on 3 standing pages, and the evaluation criteria (Effort, Attitude) align with it | Use **L.E.A.D. provisionally**; drop H.E.L.D. from new copy; confirm |
-| C4 | Booking platform | Mindbody (S5 Purchase, S7 cancel steps) vs Minos Rec (S1 inquiry; full live catalogue) | Minos has live October 2026 schedules; Mindbody can't be seen | Minos is very likely current; confirm Mindbody is retired |
+| C4 | Booking platform | Mindbody (S5 Purchase, S7 cancel and drop-in steps) vs Minos Rec (S1 inquiry; full live catalogue) | Mindbody has classes up to 2026-10-10 and none after; Minos has sessions from 2026-10-12 (6.5). The Mindbody store has no memberships (6.3). | **Minos is current for upcoming sessions** (inferred from schedules). Confirm the cut-over and that Mindbody is retired. |
 | C5 | Free session vs evaluation | "First session is free… small group sessions" (S1); "one free trial session… evaluate fit" (S7); Academy needs an evaluation and acceptance (S5–S7) | All current | **Unresolved.** Neutral copy until confirmed. |
 | C6 | Membership purchase | "must be accepted… before purchasing" (S5) vs public Purchase buttons (M2) | Both current | Policy is clear; enforcement is unknown. Don't show purchase links to prospects. |
 | C7 | Group size | "small groups of up to six" (S1) vs "Session size: up to 25" (M4, M5) | Minos splits Academy across 4 hoops (≈6 per hoop is an inference) | Confirm the wording |
-| C8 | Fundamentalists drop-in | $55 (S5) vs $60 (M5) | Minos is the transacting system | Confirm |
+| C8 | Fundamentalists drop-in | **$55** (S5 "members only"; S15 "valid for 7 days") vs **$60** (M3, M5 "/ player"; MB1 "Fundamentalists: Drop-In $60.00") | All four are live on 2026-10-10. Both booking systems charge $60. | **Unresolved.** No price shown on the new site. Confirm. |
 | C9 | Tier name | "ESSENTIAL" (S5) vs "Essentials" (M2, S7) | | Confirm; "Essentials" is the majority |
-| C10 | Cancellation | Academy 6-hour rule plus makeup bank (S7) vs "cancel up to 1 day before… full refund" (M4–M7) | Both current | May apply to different products; confirm |
+| C10 | Cancellation | Academy 6-hour rule plus makeup bank (S7) vs "Cancel or reschedule up to 1 day before the event for a full refund" (Minos Fundamentalists class M5; the Academy class page M4 was not re-checked for this text) and "…before your session…" (Individual Training M6, M7) | Both current. S7 governs memberships; the Minos text is shown on per-session bookings. | S7 is published verbatim on the new site; the Minos wording appears only on Individual Training. Confirm which applies to members booking on Minos. |
 | C11 | Schedule and hours | Repo FAQ "Mon–Thu & Sat"; repo hours "Fri closed" vs Minos Academy sessions on Fridays | Minos is live | Don't publish hours; link to the Minos schedule |
+| C13 | Pricing-plans catalogue | S15 lists Fundamentalist Premium $600 (up to 5×/week), Select & Elite plans ($300/$600/$900, drop-in $77), no Academy plans and no Fundamentalists Essentials; S5 and M2 list Academy and Fundamentalists Basic/Essentials/Plus | S15 is unlinked; its sitemap entry is from 2026-05-28. S5 and M2 agree with each other. | **Unresolved.** S15 is treated as probably legacy and not published. Confirm whether to retire it or whether any of its plans are active (6.2). |
+| C14 | Fundamentalists Plus frequency | "3 Classes Per Week / 12 per month" (S5); "up to 3 sessions per week" (M2); "2 Classes A Week + A Saturday" (S15) | Same price ($400) on all three | The new site uses S5/M2 wording. Confirm. |
+| C15 | FAQ sign-up link | S7 "Apply for the Academy Evaluation **here**" links to `/inquire`, which returns **404**. The homepage's inquiry link goes to the Minos general inquiry (S1). | Checked 2026-10-10 | The new site uses the Minos general inquiry. Confirm that's the Academy Evaluation application (ties to B1). |
+| C16 | FAQ how-to steps | S7 "How do I cancel a session?" and "How do I purchase a drop-in?" give Mindbody steps; upcoming sessions are on Minos (C4) | Mindbody has no classes after 2026-10-10 | Not published. Interim note instead. Client to supply Minos steps (B3). |
+| C17 | Drop-in eligibility wording | S7 "Yes, we accept drop-ins" (no restriction stated) vs S5 "DROP-IN (members only)" | Both current | Not contradictory, but S7 is less specific. The new site links the FAQ answer to the "Members only" drop-in section. Confirm drop-ins are members-only. |
 | C12 | Select / AAU | "Head of Select Development" (S2); IG "SELECT"; Bay Hoops AAU listing (X1) vs "not an AAU-first program" (S1) | Third-party is weakest | Confirm before any mention |
 | U1 | Mission paragraph | Repo only | | Confirm or replace |
 | U2 | Phone (408) 888-6739 | Repo only | | Confirm |
 | U3 | Testimonials (4) | Repo only; possibly Yelp | | Confirm source and permission |
 | U4 | "Premier" superlatives; FIBA "Olympic" claims | S1 and G1 marketing | | Client approval to keep |
 | U5 | Derrick NBA "trained alongside" claim | S2 | | Substantiate or omit |
-| U6 | Hall of Fame entries (5) | Repo only | | Verify plus consent (see `CONTENT_NEEDED.md`) |
+| U6 | Hall of Fame entries (5) | Repo only; **accuracy confirmed by the client 2026-10-12** | | Consent still needed before indexing (see `CONTENT_NEEDED.md` I11) |
 
 ## 15. Client Decisions Needed
 
