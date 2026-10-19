@@ -16,6 +16,8 @@ export const indexedRoutes = [
   "/events",
   "/contact",
   "/waiver",
+  "/privacy",
+  "/terms",
   // Listed only once it may be indexed; a noindex URL in a sitemap is a Search Console error.
   ...(flags.hallOfFameIndexable ? ["/hall-of-fame"] : []),
 ];

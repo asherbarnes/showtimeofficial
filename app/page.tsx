@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
-import { Placeholder } from "@/components/ui/Notice";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ProgramIndex } from "@/components/sections/ProgramIndex";
 import { LeadStandards } from "@/components/sections/LeadStandards";
@@ -166,12 +165,6 @@ export default function HomePage() {
               <Button href={links.grove} variant="text">
                 Visit The Grove
               </Button>
-            </div>
-            <div className="mt-8 max-w-(--container-lead)">
-              <Placeholder>
-                Facility details (size, flooring, weight room) appear on the official site but need client approval,
-                as does how to describe Showtime&rsquo;s relationship with The Grove (CONTENT_NEEDED I9, PRODUCT U4).
-              </Placeholder>
             </div>
           </div>
           <div className="relative aspect-4/3 lg:col-span-6 lg:aspect-auto lg:min-h-[34rem]">

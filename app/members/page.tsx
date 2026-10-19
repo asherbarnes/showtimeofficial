@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { Placeholder } from "@/components/ui/Notice";
 import { links } from "@/lib/site";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -45,12 +44,6 @@ export default function MembersPage() {
             </Button>
           </li>
         </ul>
-        <div className="mt-10 max-w-(--container-prose)">
-          <Placeholder>
-            Steps to cancel, make up or drop in to a session will be added once the client confirms the current
-            booking platform and instructions (CONTENT_NEEDED B3).
-          </Placeholder>
-        </div>
       </Section>
     </>
   );
