@@ -14,15 +14,3 @@ export function Notice({ label = "Note", children }: { label?: string; children:
   );
 }
 
-/**
- * Development marker for content awaiting the client (DESIGN 10.12).
- * Must never ship to production; a build-time check is planned for Phase 5–8.
- */
-export function Placeholder({ children }: { children: ReactNode }) {
-  return (
-    <div className="border-2 border-dashed border-error px-4 py-4 text-small text-error">
-      <p className="font-bold">[PLACEHOLDER — CLIENT INPUT NEEDED]</p>
-      <p className="mt-1 text-charcoal">{children}</p>
-    </div>
-  );
-}

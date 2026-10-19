@@ -17,22 +17,23 @@ Source: the original repo's `assets/img/` (read only, not modified). Photos were
 | `photos/individual-form.webp` | Individual Training hero | Rights; minor pictured; low resolution |
 | `photos/grove-session.webp` | Home and About (The Grove) | Rights; minors; **The Grove's wall mark is prominent** (I9) |
 | `photos/ladder-coach.webp`, `coaching-strength.webp`, `ballhandling-drill.webp` | Not used yet | Rights; minors |
-| `coaches/*.webp` (11 headshots) | Home and About (leadership 3); the rest are not used yet | Confirm photo use and current roster (CONTENT_NEEDED I6) |
+| `coaches/*.webp` (11 headshots) | Home (leadership 3), About (leadership 3 + coaching staff 8) | Confirm photo use and current roster (CONTENT_NEEDED I6) |
+| `photos/hero-jump.webp` (574×1020, 67 KB from a 748 KB PNG; added 2026-10-19) | Home hero | Rights; minors pictured; low resolution |
+| `photos/group-circle.webp` (1024×397; added 2026-10-19) | About (Why We Coach), Events (Playmaker's Clinic) | Rights; minors pictured |
+| `photos/youth-circle.webp` (1024×388; added 2026-10-19) | Events (Showtime × CYS) | Rights; minors pictured; **probably another venue** |
 
 ## Not migrated (deliberately)
 
 | File | Reason |
 | --- | --- |
-| `photo-team-huddle.png`, `photo-youth-circle.png` | Probably another venue; rights unknown |
-| `photo-grove-court.png` | The Grove's own branding is the subject |
-| `photo-hero-jump.png` | 765 KB, low resolution, wrong alt text in the old repo |
-| `photo-group-circle.png`, `photo-agility-ladder.png` | Ultra-thin crops (below the 3:1 limit) |
-| `placeholder-*.svg`, `images/showtime-logo.png` | Placeholders; duplicate logo |
+| `photo-team-huddle.png`, `photo-grove-court.png`, `photo-agility-ladder.png` | Not used on any page of the original repo |
+| `placeholder-*.svg` | Placeholders, not content |
+| `images/showtime-logo.png` | Byte-identical to `showtime-badge.png` (used on Hall of Fame) |
 | Wix and Instagram imagery | Rights unconfirmed. Request originals from the client instead. |
 
 ## Fonts
 
-Anton and Figtree (both SIL OFL) are loaded through `next/font/google` and self-hosted at build time. Wix's Netflix Sans, SF Pro, Avenir and the "Escape the Ordinary" script are **not** used (DESIGN 6.1).
+Anton and Figtree (both SIL OFL) are loaded site-wide, and Oswald (SIL OFL, weights 600 and 700) on `/hall-of-fame` only, through `next/font/google` and self-hosted at build time. Wix's Netflix Sans, SF Pro, Avenir and the "Escape the Ordinary" script are **not** used (DESIGN 6.1).
 
 ## Still needed from the client
 

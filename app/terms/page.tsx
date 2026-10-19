@@ -103,7 +103,7 @@ const sections: LegalSection[] = [
     body: (
       <p>
         This website links to sites we don&rsquo;t run, including the booking platform, {business.venue}, Instagram,
-        TikTok and Google Maps. Their own terms and privacy policies apply there, and we aren&rsquo;t responsible for
+        YouTube, TikTok and Google Maps. Their own terms and privacy policies apply there, and we aren&rsquo;t responsible for
         their content.
       </p>
     ),

@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
-import { Section, SectionHeading } from "@/components/ui/Section";
-import { NumberedList } from "@/components/sections/NumberedList";
+import { ProgramAbout } from "@/components/sections/ProgramAbout";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { images } from "@/lib/images";
 import { flags } from "@/lib/flags";
 import { tiers } from "@/lib/memberships";
 import { getProgram } from "@/lib/programs";
-import { freeSessionLine } from "@/lib/enrollment";
 import { links, primaryCta } from "@/lib/site";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -17,23 +15,14 @@ const program = getProgram("fundamentalists");
 export const metadata: Metadata = pageMetadata({
   title: "Fundamentalists | Youth Basketball Fundamentals in San Jose",
   description:
-    "Fundamentalists builds the essential skills of basketball for players with at least one year of experience, at The Grove in San Jose.",
+    "An entry point for newer athletes learning the foundations of basketball, for players with at least one year of playing experience.",
   path: program.href,
 });
 
-// Skills (S4, PRODUCT 5.2).
-const skills = [
-  "Two-handed ball handling and finishing",
-  "A reliable stationary mid-range jump shot",
-  "On-ball and help defense",
-  "Low and mid-post footwork",
-  "Communication",
-];
-
 export default function FundamentalistsPage() {
   const facts = [
+    { label: "Pathway", value: "Entry pathway" },
     { label: "Experience", value: "At least 1 year" },
-    { label: "Format", value: "60-minute group class" },
     ...(flags.showPricing ? [{ label: "Membership", value: `From $${tiers[0].fundamentalists}/month` }] : []),
   ];
 
@@ -43,7 +32,7 @@ export default function FundamentalistsPage() {
         variant="program"
         breadcrumb={{ label: "Programs", href: "/programs" }}
         title="Fundamentalists"
-        lead="Builds the essential skills of the game while fostering a deep love for it, through age-appropriate instruction, personalized feedback, teamwork, sportsmanship and a positive mindset."
+        lead={program.description[0]}
         facts={facts}
         image={images.shootingForm}
         actions={
@@ -58,18 +47,22 @@ export default function FundamentalistsPage() {
         }
       />
 
-      <Section labelledBy="skills-heading">
-        <SectionHeading id="skills-heading" eyebrow="What players work on" title="Core skills" />
-        <NumberedList items={skills} />
-      </Section>
+      <ProgramAbout program={program} />
 
       <CtaBand
         title="Try a session"
-        text={freeSessionLine}
         actions={
-          <Button href={primaryCta.href} surface="dark" size="lg" fullWidthMobile arrow>
-            {primaryCta.label}
-          </Button>
+          <>
+            <Button href={primaryCta.href} surface="dark" size="lg" fullWidthMobile arrow>
+              {primaryCta.label}
+            </Button>
+            <Button href={links.memberships} variant="secondary" surface="dark" size="lg" fullWidthMobile>
+              Book Memberships
+            </Button>
+            <Button href={links.sessions} variant="secondary" surface="dark" size="lg" fullWidthMobile>
+              Book Sessions
+            </Button>
+          </>
         }
       />
     </>

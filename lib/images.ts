@@ -1,7 +1,7 @@
 /**
  * Image manifest (DESIGN.md 11.4). Files were converted to WebP from the
  * original repo's assets/img. Rights and minors' consent are unconfirmed for
- * every photo (CONTENT_NEEDED I8): treat all of them as placeholders.
+ * every photo (CONTENT_NEEDED I8); see docs/assets.md.
  */
 
 export type ImageEntry = {
@@ -51,6 +51,15 @@ export const images = {
   individualForm: photo("individual-form", 574, 1020, "Player shooting on the court at The Grove", "50% 30%"),
   coachingStrength: photo("coaching-strength", 1024, 682, "Coach talking with seated athletes in the weight room"),
   ballhandlingDrill: photo("ballhandling-drill", 1024, 468, "Players running a ball-handling drill"),
+  // Added 2026-10-19 from the original repo; alt text is the repo's own.
+  heroJump: photo("hero-jump", 574, 1020, "Showtime athlete mid-jump during an agility ladder drill", "50% 40%"),
+  groupCircle: photo("group-circle", 1024, 397, "Athletes and coaches gathered on the court during a Showtime session"),
+  youthCircle: photo(
+    "youth-circle",
+    1024,
+    388,
+    "Young athletes seated on the court with basketballs during a youth clinic",
+  ),
 } satisfies Record<string, ImageEntry>;
 
 export type ImageKey = keyof typeof images;
@@ -65,12 +74,8 @@ export type Coach = {
   name: string;
   title: string;
   image: ImageEntry;
-  /**
-   * Condensed from the official bio (S2, read 2026-10-10) without changing its
-   * claims. Credentials are as stated by Showtime and not
-   * independently verified. The NBA "trained alongside" claim is omitted (U5).
-   */
-  summary?: string;
+  /** Full bio from the original repo's about.html. Credentials are as stated by Showtime. */
+  bio?: string;
 };
 
 const headshot = (file: string, width: number, height: number, name: string): ImageEntry => ({
@@ -83,28 +88,38 @@ const headshot = (file: string, width: number, height: number, name: string): Im
   minorsConsent: true, // adult staff
 });
 
-/** Leadership names and titles are VERIFIED on the official About page (S2). */
+/** "Who Leads Showtime" (original repo about.html). */
 export const leadership: Coach[] = [
   {
     name: "Coach Derrick Nguyen",
     title: "Founder & Director",
     image: headshot("derrick", 640, 774, "Coach Derrick Nguyen"),
-    summary:
-      "A player development specialist with over a decade of coaching experience at Caroline Davis Intermediate School and Oak Grove High School. ACSM Certified Personal Trainer and Licensed Skills Coach with Pure Sweat Basketball.",
+    bio: "Player development specialist and game strategist dedicated to building complete athletes on and off the court. With over a decade of coaching experience at Caroline Davis Intermediate School and Oak Grove High School, Derrick blends skill development, basketball IQ, and mindset training. He is an ACSM Certified Personal Trainer and a Licensed Skills Coach with Pure Sweat Basketball. His philosophy is built on the L.E.A.D. Standards: Leadership, Effort, Attitude, and Discipline.",
   },
   {
-    name: "Coach Anthony “Ant” Gardner",
-    title: "Co-Director",
+    name: "Coach Anthony Gardner",
+    title: "Co-Director & Head Trainer",
     image: headshot("anthony", 640, 612, "Coach Anthony Gardner"),
-    // CONTENT_NEEDED I6 asks the client to confirm the SJCC role.
-    summary:
-      "Nearly 14 years of competitive basketball experience and almost a decade of coaching. Co-Director & Head Trainer for Showtime and Head of Player Development at San Jose City College.",
+    bio: "Also known as Coach Ant, he brings nearly 14 years of competitive basketball experience and almost a decade of coaching, including work with top local prospects, collegiate athletes, and professionals overseas. He is Co-Director & Head Trainer for Showtime and Head of Player Development at San Jose City College, with a strong focus on community clinics and service.",
   },
   {
     name: "Coach Kimo",
     title: "Athletic Director",
     image: headshot("kimo", 640, 594, "Coach Kimo"),
-    summary:
-      "A high-performance athletic development specialist training athletes since 2007. NASM Certified Personal Trainer (CPT), Corrective Exercise Specialist (CES) and Nutrition Coach (CNC).",
+    bio: "High-performance athletic development specialist with nearly two decades of experience training athletes since 2007. He holds advanced NASM certifications as a Certified Personal Trainer (CPT), Corrective Exercise Specialist (CES), and Nutrition Coach (CNC), delivering integrated performance training, injury prevention, and movement quality at The Grove.",
   },
 ];
+
+/** "Coaching staff" (original repo about.html). */
+export const coachingStaff: Coach[] = (
+  [
+    ["jorge", "Coach Jorge", "Head of Select Development"],
+    ["lam", "Coach Lam", "Head of Fundamentalist Development"],
+    ["ron", "Coach Ron", "Fundamentalist Development Lead"],
+    ["don", "Coach Don", "Academy Coach"],
+    ["dylan", "Coach Dylan", "Academy Coach"],
+    ["jaden", "Coach Jaden", "Academy Coach"],
+    ["kenneth", "Coach Kenneth", "Academy Coach"],
+    ["aus", "Coach Aus", "Academy Coach"],
+  ] as const
+).map(([file, name, title]) => ({ name, title, image: headshot(file, 574, 646, name) }));

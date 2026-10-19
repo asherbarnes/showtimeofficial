@@ -3,11 +3,12 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { ProgramAbout } from "@/components/sections/ProgramAbout";
 import { images } from "@/lib/images";
 import { flags } from "@/lib/flags";
 import { individualTraining } from "@/lib/memberships";
 import { getProgram } from "@/lib/programs";
-import { links } from "@/lib/site";
+import { links, primaryCta } from "@/lib/site";
 import { pageMetadata } from "@/lib/metadata";
 
 const program = getProgram("individual-training");
@@ -15,12 +16,9 @@ const program = getProgram("individual-training");
 export const metadata: Metadata = pageMetadata({
   title: "Individual Training | 1-on-1 Basketball Training in San Jose",
   description:
-    "1-on-1 basketball training with a Showtime coach in San Jose. Work on shooting mechanics, footwork, ball-handling, finishing and movement.",
+    "Focused 1:1 and small-group individual training in San Jose for athletes refining specific mechanics, habits, or areas of their game.",
   path: program.href,
 });
-
-// Focus areas (S8, PRODUCT 5.3).
-const focusAreas = ["Shooting mechanics", "Footwork", "Ball-handling details", "Finishing", "Movement patterns"];
 
 const bookingLinks = {
   "Academy Coach": links.itAcademyCoach,
@@ -34,9 +32,9 @@ export default function IndividualTrainingPage() {
         variant="program"
         breadcrumb={{ label: "Programs", href: "/programs" }}
         title="Individual Training"
-        lead="Work on specific mechanics, habits or areas of refinement at the athlete's own pace."
+        lead={program.description[0]}
         facts={[
-          { label: "Format", value: "1-on-1" },
+          { label: "Format", value: "1:1 & small group" },
           { label: "Length", value: "60 minutes" },
           { label: "Coach levels", value: "Academy Coach or Master Coach" },
         ]}
@@ -48,16 +46,7 @@ export default function IndividualTrainingPage() {
         }
       />
 
-      <Section labelledBy="focus-heading">
-        <SectionHeading id="focus-heading" eyebrow="Focus areas" title="What sessions cover" />
-        <ul className="grid border-t-2 border-black sm:grid-cols-2">
-          {focusAreas.map((area) => (
-            <li key={area} className="border-b border-neutral-300 py-4 type-h4 sm:odd:pr-6">
-              {area}
-            </li>
-          ))}
-        </ul>
-      </Section>
+      <ProgramAbout program={program} />
 
       <Section surface="neutral" id="book" labelledBy="book-heading">
         <SectionHeading id="book-heading" eyebrow="Book" title="Choose a coach level" />
@@ -89,11 +78,18 @@ export default function IndividualTrainingPage() {
 
       <CtaBand
         title="Have a question first?"
-        text="Send an inquiry and tell us what your athlete wants to work on."
         actions={
-          <Button href={links.inquiry} surface="dark" size="lg" fullWidthMobile>
-            Ask a question
-          </Button>
+          <>
+            <Button href={primaryCta.href} surface="dark" size="lg" fullWidthMobile arrow>
+              {primaryCta.label}
+            </Button>
+            <Button href={links.sessions} variant="secondary" surface="dark" size="lg" fullWidthMobile>
+              Book Sessions
+            </Button>
+            <Button href="/contact" variant="secondary" surface="dark" size="lg" fullWidthMobile>
+              Ask About Availability
+            </Button>
+          </>
         }
       />
     </>

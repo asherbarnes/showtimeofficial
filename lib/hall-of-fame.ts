@@ -4,8 +4,7 @@
  * The five entries come from the original repo's `hall-of-fame.html`, in its
  * order. The client confirmed they are accurate on 2026-10-12 (none appear on
  * the official Wix site). Consent to feature each player is still pending. A field the source left blank
- * ("—") is omitted, not stored as "none", because a blank only means the source
- * didn't list it.
+ * ("—") is left undefined, not stored as "none"; the page shows it as "—" like the source.
  *
  * To add or update a player, edit this array only. Never add players,
  * statistics, years or awards without client confirmation and consent.
@@ -27,9 +26,9 @@ export type HallOfFamePlayer = {
 
 /** The pathway stages, in display order. Rendering is driven by this list. */
 export const pathwayFields = [
-  { key: "highSchool", label: "High school" },
+  { key: "highSchool", label: "High School" },
   { key: "college", label: "College" },
-  { key: "professional", label: "Professional" },
+  { key: "professional", label: "Pro" },
 ] as const satisfies readonly { key: keyof HallOfFamePlayer; label: string }[];
 
 const originalRepo = "Original repo hall-of-fame.html (asherbarnes/Showtimebasketball); accuracy confirmed by the client 2026-10-12";

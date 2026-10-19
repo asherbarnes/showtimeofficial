@@ -23,7 +23,7 @@ export default function WaiverPage() {
     <>
       <PageHero
         title="Waiver"
-        eyebrow="Members"
+        eyebrow="Memberships"
         lead="Showtime Basketball Academy & The Grove Waiver & Release of Liability Form. Families must complete this before participating in training."
       />
 
