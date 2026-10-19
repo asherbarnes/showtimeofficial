@@ -1,21 +1,29 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { CourtArc } from "@/components/ui/CourtArc";
-import { Section } from "@/components/ui/Section";
-import { CtaBand } from "@/components/sections/CtaBand";
-import { PlayerRoster } from "@/components/sections/PlayerRoster";
-import { freeSessionLine } from "@/lib/enrollment";
-import { hallOfFame } from "@/lib/hall-of-fame";
+import Image from "next/image";
+import { Oswald } from "next/font/google";
+import { badge } from "@/lib/images";
+import { hallOfFame, pathwayFields } from "@/lib/hall-of-fame";
 import { flags } from "@/lib/flags";
 import { pageMetadata } from "@/lib/metadata";
-import { primaryCta } from "@/lib/site";
+import "./hall-of-fame.css";
+
+// SIL OFL, self-hosted by next/font. Used on this page only.
+const oswald = Oswald({
+  weight: ["600", "700"],
+  subsets: ["latin"],
+  variable: "--font-oswald",
+  display: "swap",
+});
 
 /**
  * Linked from the main nav (records confirmed by the client, CONTENT_NEEDED I11).
  * Stays noindex, and out of the sitemap, until `flags.hallOfFameIndexable` is
  * set on publication approval. Once set, the site-wide indexing rules in
  * app/layout.tsx apply like any other page.
+ *
+ * Design: the vintage NBA 2K-style board from the original repo's
+ * hall-of-fame.html, the client's approved direction (2026-10-19). The repo's
+ * template-only rows ("Add player name") and editor note are not ported.
  */
 export const metadata: Metadata = {
   ...pageMetadata({
@@ -28,70 +36,62 @@ export const metadata: Metadata = {
 };
 
 export default function HallOfFamePage() {
-  const total = hallOfFame.length;
-  const countLabel = total === 1 ? "Player featured" : "Players featured";
-
   return (
-    <>
-      <section
-        aria-labelledby="hof-title"
-        data-surface="dark"
-        className="relative overflow-hidden border-b-2 border-amber-500 bg-black text-white"
-      >
-        <CourtArc className="-right-24 -bottom-36 size-[20rem] sm:-bottom-44 sm:size-[30rem] lg:-right-16 lg:-bottom-64 lg:size-[44rem]" />
-        <Container className="relative grid gap-8 py-12 md:gap-10 md:py-20 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
-            <h1 id="hof-title" className="type-display-lg">
-              Hall of Fame
-            </h1>
-            <p className="mt-5 max-w-(--container-lead) text-lead text-muted-dark md:mt-6">
-              Recognizing the players featured in Showtime&rsquo;s Hall of Fame and their basketball paths beyond the
-              academy.
-            </p>
+    <div className={`${oswald.variable} hof-page`}>
+      <div className="hof-wrap">
+        <div className="hof-titlebar">
+          <div className="hof-logo">
+            <Image src={badge.src} width={badge.width} height={badge.height} alt="Showtime Basketball logo" />
           </div>
-          {/* Stat-sized, no leading zero: the names are the peak, not the count (DESIGN 10.1 D). */}
-          {total > 0 && (
-            <p className="flex items-end gap-3 border-t border-line-dark pt-6 lg:col-span-4 lg:justify-end lg:border-t-0 lg:pt-0">
-              <span aria-hidden="true" className="type-stat leading-[0.85] text-amber-500 tabular-nums">
-                {total}
-              </span>
-              <span aria-hidden="true" className="type-label max-w-[9ch] text-white">
-                {countLabel}
-              </span>
-              <span className="sr-only">
-                {total} {countLabel.toLowerCase()}
-              </span>
-            </p>
-          )}
-        </Container>
-      </section>
+          <div>
+            <h1 className="hof-title">Hall of Fame</h1>
+            <p className="hof-subtitle">Player Pathways</p>
+          </div>
+          <div aria-hidden="true" className="hof-ribbon">
+            Showtime Basketball
+          </div>
+        </div>
 
-      {total > 0 && (
-        <Section labelledBy="pathways-heading" compact>
-          <h2 id="pathways-heading" className="type-label border-b-2 border-black pb-3">
-            Player pathways
-          </h2>
-          <PlayerRoster players={hallOfFame} />
-        </Section>
-      )}
-
-      {/* Charcoal, not black: the hero above and the footer below are both black (DESIGN 4.2, 10.10). */}
-      <CtaBand
-        surface="charcoal"
-        compact
-        title="Come train with us"
-        text={freeSessionLine}
-        actions={
-          <>
-            <Button href={primaryCta.href} surface="dark" size="lg" fullWidthMobile arrow>
-              {primaryCta.label}
-            </Button>
-            <Button href="/programs" variant="secondary" surface="dark" size="lg" fullWidthMobile>
-              Explore programs
-            </Button>
-          </>
-        }
-      />
-    </>
+        <div className="hof-panel">
+          {/* Scrolls sideways if a long name ever outgrows a small phone; focusable so keyboards can scroll it. */}
+          <div className="hof-panel-inner" tabIndex={0} role="region" aria-label="Hall of Fame players">
+            <table className="hof-table">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  {pathwayFields.map((field) => (
+                    <th key={field.key} scope="col">
+                      {field.label}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {hallOfFame.map((player, index) => (
+                  <tr key={`${index}-${player.name}`}>
+                    <th scope="row" className="hof-name-cell">
+                      <span className="hof-name">
+                        <span aria-hidden="true" className="hof-marker" />
+                        {player.name}
+                      </span>
+                    </th>
+                    {pathwayFields.map((field) => (
+                      <td key={field.key}>
+                        {player[field.key] ?? (
+                          <>
+                            <span aria-hidden="true">—</span>
+                            <span className="sr-only">Not listed</span>
+                          </>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

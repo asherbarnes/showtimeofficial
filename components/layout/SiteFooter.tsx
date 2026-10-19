@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { business, fullAddress, links, programLinks, socials } from "@/lib/site";
-import { ExternalIcon, InstagramIcon, TikTokIcon } from "@/components/ui/icons";
+import { ExternalIcon, InstagramIcon, TikTokIcon, YouTubeIcon } from "@/components/ui/icons";
 
-const socialIcons = { Instagram: InstagramIcon, TikTok: TikTokIcon } as const;
+const socialIcons = { Instagram: InstagramIcon, YouTube: YouTubeIcon, TikTok: TikTokIcon } as const;
 
 type FooterLink = { label: string; href: string };
 
@@ -55,18 +55,20 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
   );
 }
 
-/**
- * Black body + amber legal bar (DESIGN 10.11). No phone, email or hours until
- * confirmed (CONTENT_NEEDED B8).
- */
+/** Black body + amber legal bar (DESIGN 10.11). Text from the original repo's footer. */
 export function SiteFooter() {
   return (
     <footer data-sticky-cta-hide>
       <div data-surface="dark" className="bg-black text-white">
         <div className="container-site grid gap-12 py-14 md:py-20 lg:grid-cols-12 lg:gap-8">
           <div className="flex flex-col gap-8 lg:col-span-4">
-            <Logo size={64} />
-            <p className="max-w-[36ch] text-muted-dark">{business.positioning}</p>
+            <div>
+              <Logo size={64} />
+              <p className="type-label mt-4 text-white">
+                {business.legalName} | Est. {business.established}
+              </p>
+            </div>
+            <p className="max-w-[40ch] text-muted-dark">{business.mission}</p>
             <address className="not-italic">
               <p className="type-label mb-2 text-amber-500">Where we train</p>
               <p>
@@ -83,6 +85,9 @@ export function SiteFooter() {
                 Get directions
                 <ExternalIcon />
                 <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              <a href={business.phone.href} className="mt-1 flex min-h-11 items-center font-bold underline underline-offset-4">
+                {business.phone.display}
               </a>
             </address>
           </div>
@@ -128,7 +133,7 @@ export function SiteFooter() {
       <div data-surface="amber" className="bg-amber-500 text-black">
         <div className="container-site flex flex-col items-center gap-2 py-4 text-center text-small font-semibold sm:flex-row sm:justify-between sm:text-left">
           <p>
-            © {business.legalName} · Est. {business.established}
+            © 2026 {business.legalName}. All rights reserved.
           </p>
           <ul className="flex flex-wrap justify-center gap-x-6">
             {legalLinks.map((link) => (

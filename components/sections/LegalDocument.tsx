@@ -6,6 +6,13 @@ export type LegalSection = { id: string; title: string; body: ReactNode };
 
 /** Inline link for legal prose. External links follow the site-wide new-tab convention. */
 export function LegalLink({ href, children }: { href: string; children: ReactNode }) {
+  if (href.startsWith("tel:")) {
+    return (
+      <a href={href} className="prose-link">
+        {children}
+      </a>
+    );
+  }
   if (href.startsWith("http")) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className="prose-link inline-flex items-center gap-1">

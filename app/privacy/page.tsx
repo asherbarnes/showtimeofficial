@@ -14,9 +14,10 @@ export const metadata: Metadata = pageMetadata({
 
 /*
  * Pending owner and attorney approval (CONTENT_NEEDED B9). Every statement about this website was checked
- * against the code on 2026-10-19: no forms, cookies, browser storage,
- * analytics or third-party requests. Re-check this page whenever that changes
- * (analytics O4, a waiver form B6, an inquiry form). Statements about what
+ * against the code on 2026-10-19: no forms, cookies, browser storage or
+ * analytics; the only third-party content is the Google Maps embed on
+ * /contact. Re-check this page whenever that changes (analytics O4, a waiver
+ * form B6, an inquiry form, another embed). Statements about what
  * Showtime does with information come from the waiver's verbatim text
  * (components/sections/WaiverText.tsx) and PRODUCT.md. Unconfirmed practices
  * (retention, The Grove, sale of data, hosting) are left out until B9 is answered.
@@ -65,8 +66,14 @@ const sections: LegalSection[] = [
           served from this website itself, not from third-party services.
         </p>
         <p>
-          Because the site does not track visitors over time or across other websites, it does not respond differently to
-          browser &ldquo;Do Not Track&rdquo; signals. There is nothing for those signals to switch off.
+          The one exception is the map on our <LegalLink href="/contact">Contact page</LegalLink>, which is embedded from
+          Google Maps. When you open that page, your browser loads the map from Google, which receives technical details
+          such as your IP address and may set or read its own cookies. Google&rsquo;s privacy policy applies to that
+          content.
+        </p>
+        <p>
+          Showtime does not use the map, or anything else on this site, to track visitors over time or across other
+          websites, and the site does not respond differently to browser &ldquo;Do Not Track&rdquo; signals.
         </p>
         <p>
           The booking platform, social media sites and maps service we link to may use their own cookies once you visit
@@ -199,7 +206,7 @@ const sections: LegalSection[] = [
     title: "Other websites",
     body: (
       <p>
-        This website links to the booking platform, {business.venue}, Instagram, TikTok and Google Maps. We don&rsquo;t
+        This website links to the booking platform, {business.venue}, Instagram, YouTube, TikTok and Google Maps. We don&rsquo;t
         control those sites. Their own privacy policies apply when you use them.
       </p>
     ),
@@ -221,7 +228,7 @@ const sections: LegalSection[] = [
         <p>
           For privacy questions or requests, including requests about your child&rsquo;s information or photos, send us a
           message through our <LegalLink href={links.inquiry}>inquiry form</LegalLink> and say that it is a privacy
-          request.
+          request. You can also call us at <LegalLink href={business.phone.href}>{business.phone.display}</LegalLink>.
         </p>
       </>
     ),

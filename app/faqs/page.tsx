@@ -4,29 +4,28 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
+import { CtaBand } from "@/components/sections/CtaBand";
 import { faqGroups } from "@/lib/faqs";
-import { links } from "@/lib/site";
+import { links, primaryCta } from "@/lib/site";
 import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = pageMetadata({
-  title: "FAQs",
-  description:
-    "How to sign up, the cancellation and make-up policy, drop-ins, membership cancellations and refunds at Showtime Basketball Academy.",
-  path: "/faqs",
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "FAQs",
+    description:
+      "Straight answers about who can train, how the first session works, and how memberships fit into Showtime's culture of hard work, discipline, and leadership.",
+    path: "/faqs",
+  }),
+  title: { absolute: "FAQs | Showtime Basketball Academy San Jose" },
+};
 
 export default function FaqsPage() {
   return (
     <>
       <PageHero
-        title="FAQs"
-        eyebrow="Help"
-        lead="Can't find what you need? Send us an inquiry."
-        actions={
-          <Button href={links.inquiry} variant="secondary" fullWidthMobile>
-            Send an inquiry
-          </Button>
-        }
+        title="Questions Parents Ask"
+        eyebrow="FAQs"
+        lead="Straight answers about who can train, how the first session works, and how memberships fit into Showtime's culture of hard work, discipline, and leadership."
       />
 
       <Section>
@@ -63,6 +62,24 @@ export default function FaqsPage() {
           ))}
         </div>
       </Section>
+
+      <CtaBand
+        title="Still have questions?"
+        text="Send an inquiry and start with a free session. We'll help from there."
+        actions={
+          <>
+            <Button href={primaryCta.href} surface="dark" size="lg" fullWidthMobile arrow>
+              {primaryCta.label}
+            </Button>
+            <Button href={links.minosHome} variant="secondary" surface="dark" size="lg" fullWidthMobile>
+              Book Online
+            </Button>
+            <Button href={links.memberships} variant="secondary" surface="dark" size="lg" fullWidthMobile>
+              Book Memberships
+            </Button>
+          </>
+        }
+      />
     </>
   );
 }

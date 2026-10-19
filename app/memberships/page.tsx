@@ -5,32 +5,70 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Notice } from "@/components/ui/Notice";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
+import { StepRail } from "@/components/sections/StepRail";
 import { faqsById } from "@/lib/faqs";
 import { flags } from "@/lib/flags";
 import { acceptanceRule, dropIns, individualTraining, tiers } from "@/lib/memberships";
-import { academyPlacementLine, freeSessionLine, startLead } from "@/lib/enrollment";
+import { freeSessionLine } from "@/lib/enrollment";
 import { links, primaryCta } from "@/lib/site";
 import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Memberships",
-  description:
-    "Showtime Basketball Academy membership plans for Academy and Fundamentalists. Memberships are available after acceptance into the program.",
-  path: "/memberships",
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Memberships",
+    description:
+      "Memberships support weekly development inside Academy and Fundamentalist pathways. Acceptance into the program is required before purchase.",
+    path: "/memberships",
+  }),
+  title: { absolute: "Memberships & Pricing | Showtime Basketball Academy" },
+};
 
 const plans = [
   { name: "Academy", key: "academy" },
   { name: "Fundamentalists", key: "fundamentalists" },
 ] as const;
 
-// Same official text as /faqs (single source in lib/faqs.tsx).
+// Membership content from the original repo's memberships.html (source of truth since 2026-10-19).
+const value = [
+  { title: "Structured Development", text: "Consistent weekly training inside a clear curriculum and coaching standard." },
+  { title: "Small-Group Attention", text: "Groups sized for teaching (up to six athletes) so coaches can correct and challenge." },
+];
+
+const memberSteps = [
+  { title: "Inquire", text: "Submit a free-session / general inquiry so the team can follow up." },
+  { title: "Screening", text: "If everything checks out, you'll receive next steps for evaluation." },
+  { title: "Evaluation", text: "Your athlete comes in so coaches can assess fit, energy, and readiness." },
+  { title: "Membership", text: "If accepted, enroll through the memberships portal." },
+];
+
+// Same text as /faqs (single source in lib/faqs.tsx).
 const policyFaqs = faqsById(["cancellation-policy", "cancel-membership", "refunds"]);
 
 export default function MembershipsPage() {
   return (
     <>
-      <PageHero title="Memberships" eyebrow="Plans" lead="Acceptance into a program comes first. Then choose how often your athlete trains." />
+      <PageHero
+        title="Train Consistently"
+        eyebrow="Memberships"
+        lead="Memberships support weekly development inside Academy and Fundamentalist pathways, built around hard work, discipline, leadership, and growth beyond the court. Acceptance into the program is required before purchase."
+      />
+
+      <Section surface="neutral" labelledBy="overview-heading" compact>
+        <SectionHeading
+          id="overview-heading"
+          eyebrow="Overview"
+          title="How Membership Works"
+          lead="Showtime is a selective development program. Families complete an inquiry/evaluation process before membership options are unlocked. Current plans and checkout live in the Showtime booking portal."
+        />
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Button href={links.memberships} fullWidthMobile arrow>
+            Browse &amp; Book Memberships
+          </Button>
+          <Button href={primaryCta.href} variant="secondary" fullWidthMobile arrow>
+            {primaryCta.label}
+          </Button>
+        </div>
+      </Section>
 
       <Section labelledBy="plans-heading">
         <div className="mb-10 max-w-(--container-prose)">
@@ -132,28 +170,84 @@ export default function MembershipsPage() {
 
         {/* Purchase links are for accepted families only (CONTENT_NEEDED B2). */}
         <div className="mt-14 max-w-4xl border-t-2 border-black pt-8">
-          <h3 className="type-h3">Already accepted into a program?</h3>
+          <h3 className="type-h3">Ready to enroll?</h3>
           <p className="mt-2 max-w-(--container-lead) text-neutral-600">
-            Purchase your membership on our booking site. New families start with an inquiry.
+            View live membership tiers, pricing, and availability in the Showtime booking portal. Plans update there first.
           </p>
-          <div className="mt-5">
-            <Button href={links.memberships} variant="secondary" fullWidthMobile>
-              Purchase a membership
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Button href={links.memberships} fullWidthMobile arrow>
+              Book Memberships
+            </Button>
+            <Button href={links.sessions} variant="secondary" fullWidthMobile arrow>
+              Book Sessions
             </Button>
           </div>
         </div>
       </Section>
 
-      <Section surface="neutral" id="how-to-become-a-member" labelledBy="become-heading">
+      <Section surface="neutral" labelledBy="value-heading">
+        <SectionHeading
+          id="value-heading"
+          eyebrow="What's included"
+          title="Membership Value"
+          lead="Memberships support consistent weekly development inside Academy and Fundamentalist pathways: small-group coaching, structured progressions, and standards that carry beyond the court."
+        />
+        <ul className="grid gap-8 md:grid-cols-3">
+          {value.map((item) => (
+            <li key={item.title} className="border-t-2 border-black pt-5">
+              <h3 className="type-h3">{item.title}</h3>
+              <p className="mt-2 text-neutral-600">{item.text}</p>
+            </li>
+          ))}
+          <li className="border-t-2 border-black pt-5">
+            <h3 className="type-h3">Train at The Grove</h3>
+            <p className="mt-2 text-neutral-600">
+              Sessions run at The Grove in San Jose. Facility details are on{" "}
+              <a href={links.grove} target="_blank" rel="noopener noreferrer" className="prose-link">
+                thegrove.work
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              .
+            </p>
+          </li>
+        </ul>
+      </Section>
+
+      <Section id="how-to-become-a-member" labelledBy="become-heading">
         <SectionHeading
           id="become-heading"
-          eyebrow="New families"
-          title="How to become a member"
-          lead={`${startLead} ${academyPlacementLine}`}
+          eyebrow="Get started"
+          title="How to Become a Member"
+          lead="Based on Showtime's current evaluation process. Exact steps may be confirmed during your inquiry."
         />
-        <Button href="/get-started" variant="text">
-          See every step to get started
-        </Button>
+        <StepRail steps={memberSteps} />
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Button href={links.memberships} fullWidthMobile>
+            Book Memberships
+          </Button>
+          <Button href={primaryCta.href} variant="secondary" fullWidthMobile>
+            {primaryCta.label}
+          </Button>
+          <Button href="/faqs" variant="text">
+            Read FAQs
+          </Button>
+        </div>
+      </Section>
+
+      <Section surface="amber" id="waiver" labelledBy="waiver-heading" compact>
+        <p className="type-label mb-3">Required</p>
+        <h2 id="waiver-heading" className="type-h2">
+          Waiver
+        </h2>
+        <p className="mt-4 max-w-(--container-lead)">
+          Families must complete the Showtime Basketball Academy &amp; The Grove Waiver &amp; Release of Liability before
+          participating in training.
+        </p>
+        <div className="mt-6">
+          <Button href="/waiver#complete-waiver" surface="amber" fullWidthMobile>
+            Read &amp; Sign Waiver
+          </Button>
+        </div>
       </Section>
 
       <Section id="policies" labelledBy="policies-heading">

@@ -425,9 +425,11 @@ No full-screen (100vh) heroes. No text set directly on a high-key photo (see 11.
 - **Notice:** an `amber-100` surface, 2 px `amber-700` left rule, info icon, and charcoal text. Used for policy notes and "coming soon".
 - **FAQ accordion:** native `<details>`/`<summary>`. Summary in `h4` Figtree with a + / − indicator; 1 px rules between items.
 - **Chips/tags:** `label` type, 1 px `neutral-500` border, 2 px radius, no fill. On dark: white border.
-- **Placeholder marker** (for unverified content in dev): dashed 2 px `error` border, `[PLACEHOLDER — CLIENT INPUT NEEDED]` text. **Must never ship to production.** Add a build-time check in Phase 5–8.
+- **Placeholder marker:** retired 2026-10-19 (component removed). Missing content is tracked in CONTENT_NEEDED.md and left off the page.
 
 ### 10.13 Record board (Hall of Fame)
+
+> **Superseded 2026-10-19.** The client approved the original repo's vintage NBA 2K-style Hall of Fame as the creative direction, and `/hall-of-fame` now reproduces it (`app/hall-of-fame/hall-of-fame.css`): leather radial gradient (#7a1717 → #3a0a0a), black title bar with a 3 px gold (#a9840f) border, Anton italic title, Oswald body, gold (#f0c419) subtitle, cream ribbon, wood-framed cream table (Name / High School / College / Pro) with alternating rows, a gold glow on row hover, and "—" for stages the source leaves blank (screen readers hear "Not listed"). It deliberately sits outside this system (gradients, shadows, 10 px corners, a third family); the exception is scoped to that page. The site header and footer still frame it. Differences from the source: the template's "Add player name" row and editor note are omitted, the table scrolls inside its frame on very narrow screens instead of clipping, and Oswald is self-hosted. The record board spec below and hero variant D are kept for reference only.
 
 - **Purpose:** list recognised players and the stages of their basketball paths, with nothing implied that the source doesn't state.
 - **Composition:** a `label` H2 ("Player pathways") over a 2 px black rule, then an ordered list of rows separated by 1 px `neutral-300` rules. Each row has a quiet Anton numeral (28–32 px, `neutral-500`, no filled block, `aria-hidden`; the `<ol role="list">` carries the order). The order is the source order, **not a ranking**, so the numeral must never outweigh the name. Then the player's name (see 6.3 exception), and a `<dl>` of **only the stages the source lists**, in order (High school, College, Professional). Each stage has a visible `label` term over an `h4` value.

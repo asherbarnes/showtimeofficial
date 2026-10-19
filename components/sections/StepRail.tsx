@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 export type Step = { title: string; text: ReactNode };
 
-const columns = { 3: "lg:grid-cols-3", 5: "lg:grid-cols-5" } as const;
+const columns = { 3: "lg:grid-cols-3", 4: "lg:grid-cols-4", 5: "lg:grid-cols-5" } as const;
 
 /**
  * Numbered steps as real text (DESIGN 10.5): a vertical court-line rule on
@@ -10,7 +10,7 @@ const columns = { 3: "lg:grid-cols-3", 5: "lg:grid-cols-5" } as const;
  * black, so it works on the amber band and on white.
  */
 export function StepRail({ steps }: { steps: Step[] }) {
-  const cols = steps.length === 3 ? columns[3] : columns[5];
+  const cols = columns[steps.length as keyof typeof columns] ?? columns[5];
   return (
     <ol className={`grid lg:gap-8 ${cols}`}>
       {steps.map((step, index) => (

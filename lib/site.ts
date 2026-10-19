@@ -1,8 +1,10 @@
 /**
  * Business facts and external destinations.
  *
- * Every value here must trace to PRODUCT.md. Anything UNVERIFIED there
- * (phone, email, hours, mission paragraph) is deliberately absent.
+ * Since 2026-10-19 the original repo (asherbarnes/Showtimebasketball, commit
+ * 3bfcb18) is the source of truth for site content, at the agency's direction.
+ * The mission, phone, hours and YouTube channel below come from it and are
+ * still unconfirmed by the client (CONTENT_NEEDED B8, I2, O3).
  */
 
 export const business = {
@@ -13,6 +15,17 @@ export const business = {
   /** Official positioning line (PRODUCT 3.1, S1). */
   positioning:
     "Developing complete basketball players through intentional coaching, small-group training, and a foundation-first approach.",
+  /** "Our Mission" (original repo, every page). */
+  mission:
+    "Showtime Basketball builds athletes through a culture of hard work, discipline, and leadership, using basketball as a platform for intentional coaching and mentorship that develops character, skill, and success beyond the court.",
+  phone: { display: "(408) 888-6739", href: "tel:+14088886739" },
+  hours: [
+    { days: "Monday to Thursday", time: "5:00 PM to 7:30 PM" },
+    { days: "Friday", time: "Closed" },
+    { days: "Saturday", time: "9:00 AM to 11:30 AM" },
+    { days: "Sunday", time: "Closed" },
+  ],
+  hoursNote: "Hours may vary with training schedules. Confirm when you inquire.",
   venue: "The Grove",
   address: {
     street: "2099 S 10th St, Unit 90",
@@ -40,11 +53,17 @@ export const links = {
   itMasterCoach: "https://minosrec.com/showtime-basketball-academy/lesson/101",
   grove: "https://www.thegrove.work/",
   maps: "https://maps.google.com/?q=2099%20S%2010th%20St%2C%20San%20Jose%2C%20CA%2095112",
+  /** Google Maps embed on /contact. It loads from Google: see the Privacy Policy's cookies section. */
+  mapEmbed:
+    "https://www.google.com/maps?q=Showtime+Basketball+Academy,+2099+S+10th+St+Unit+90,+San+Jose,+CA+95112&output=embed",
+  instagramAcademyPost: "https://www.instagram.com/p/DVhbzSeD7V_/",
+  instagramFundamentalsPost: "https://www.instagram.com/p/DVe4-qSj-Sh/",
 } as const;
 
-/** YouTube is omitted until the channel is confirmed (CONTENT_NEEDED O3). */
+/** YouTube is from the original repo; the channel is unconfirmed (CONTENT_NEEDED O3). */
 export const socials = [
   { name: "Instagram", handle: "@showtimebasketball", href: "https://www.instagram.com/showtimebasketball/" },
+  { name: "YouTube", handle: "@Showtimebasketballacademy", href: "https://www.youtube.com/@Showtimebasketballacademy" },
   { name: "TikTok", handle: "@showtimeba", href: "https://www.tiktok.com/@showtimeba" },
 ] as const;
 
@@ -68,9 +87,7 @@ export const primaryNav: NavLink[] = [
 export const membersLink: NavLink = { label: "Members", href: "/members" };
 
 /**
- * The one generic enrollment CTA. "Get Started" rather than "Book a Free
- * Session": the free-session offer is verified only for small-group sessions,
- * and which programs qualify is unconfirmed (CONTENT_NEEDED B1). The offer
- * itself is stated, with its qualification, on Home and Get Started.
+ * The one generic enrollment CTA. Label from the original repo; it still
+ * leads to the /get-started explainer, which links to the inquiry form.
  */
-export const primaryCta: NavLink = { label: "Get Started", href: "/get-started" };
+export const primaryCta: NavLink = { label: "Get Your Free Session", href: "/get-started" };

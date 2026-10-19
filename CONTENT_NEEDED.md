@@ -5,7 +5,7 @@ These are client questions for the Next.js rebuild, consolidated from the Phase 
 - **Facts and sources:** [`PRODUCT.md`](PRODUCT.md). Conflict IDs (C1–C12, U1–U6) refer to PRODUCT.md section 14.
 - **Migration:** [`research/migration-requirements.md`](research/migration-requirements.md)
 
-_Last updated: 2026-10-19 (B9 legal pages added). Earlier: 2026-10-10 (pricing re-verified: B5 rewritten; official FAQs read in full: B3 rewritten, I16 updated)._
+_Last updated: 2026-10-19 (original-repo content transfer; B9 legal pages added). Earlier: 2026-10-10 (pricing re-verified: B5 rewritten; official FAQs read in full: B3 rewritten, I16 updated)._
 
 **Priority**
 
@@ -18,6 +18,41 @@ _Last updated: 2026-10-19 (B9 legal pages added). Earlier: 2026-10-10 (pricing r
 "Dev?" says whether development can continue without the answer.
 
 ---
+
+## Original-repo content transfer (2026-10-19)
+
+At the agency's direction, the original repo (`asherbarnes/Showtimebasketball`, commit 3bfcb18) is now the source of truth for site content. Its text, bios, FAQs, events, contact details and images were transferred verbatim into the existing structure, and the Hall of Fame was rebuilt in its vintage NBA 2K design. **This overrides the interim wording in several items below**; the questions themselves remain open until the client confirms.
+
+**Now published but still unconfirmed by the client**
+- Mission paragraph (I2): Home, About, footer
+- Phone (408) 888-6739 and hours Mon–Thu 5:00–7:30 PM, Sat 9:00–11:30 AM, Fri/Sun closed (B8): Contact, FAQs, footer, Privacy Policy
+- "South Bay's Premier Training Program" (I14): Home hero
+- Four parent testimonials, the first truncated as in the source (I7): Home
+- "Small groups of up to six" (I4): Home, About, Memberships
+- Academy "2.5+ years" / "roughly 2.5–3+ years" (B4): Home, Programs, Academy
+- Coach Jorge, "Head of Select Development" (I3) and full leadership bios, including Coach Ant's SJCC role (I6): About
+- The Grove facility claims: 10,000 sq ft, FIBA-certified hardwood, weight room (I9): Home
+- YouTube channel @Showtimebasketballacademy (O3): footer
+- Athletic Development "Coming Soon" with a full description (O1): Home, Programs
+- Primary CTA "Get Your Free Session", and "Book Memberships" links shown to prospects (B1, B2)
+
+**Contradictions the transfer creates (need a client decision)**
+- Hours vs the live Minos schedule (Friday sessions, 3–8 PM starts), and the FAQ's "Mondays through Thursdays and Saturdays" (C11).
+- FAQ "How do I cancel a session?" gives **Mindbody** steps; Minos is the current platform (B3).
+- FAQ "How do I purchase a drop-in?" says to scroll to the bottom of the Minos memberships page, which lists no drop-ins (B3); "Do you accept drop-ins?" says yes, while `/memberships` says drop-ins are members only (C17).
+- Events page uses **H.E.L.D.** (Hard Work, Energy, Leadership, Discipline); About and the Academy overview use **L.E.A.D.** (I1).
+- "Up to six" vs Minos "up to 25" (I4).
+
+**Not transferred, and why**
+- **Waiver signature form** (`waiver.html` + `scripts/waiver-form.js`): its EmailJS keys and recipient are unfilled placeholders (`YOUR_EMAILJS_PUBLIC_KEY` etc.), so every submission would fail. Shipping it would collect minors' signatures and send them nowhere. The interim waiver instructions stay (B6). The Memberships "Go to Signature Form" button was dropped for the same reason; "Read & Sign Waiver" links to the waiver instructions.
+- Hall of Fame template leftovers: the "Add player name" row and the "Duplicate a `<tr>`…" note.
+- `placeholder-*.svg` images (placeholders, not content).
+- The repo's `share.google/iwF509Id1Iis388Qe` map link: it opens a Google Search page, so the existing `maps.google.com` link is kept (PRODUCT.md, "Maps" row).
+- Memberships: the clause "— not on this page" (this site does show plans and prices), and the "Browse live plans" aside, which repeats "Ready to enroll?" with the same link.
+- The repo's navigation and footer structure (Contact and Waiver in the nav, a "Connect" footer column): the current structure was kept as instructed; footer text was updated.
+- The "Our Mission" strip repeated on every page: the mission appears on Home, About and in the footer instead.
+
+**Current content kept because the original repo has no counterpart:** membership prices (B5), Individual Training booking cards and cancellation quote, the Academy evaluation criteria and five steps, `/get-started`, `/members`, the waiver instructions, the Home "at a glance" strip and steps band, the Grove section on About, and the Privacy Policy and Terms.
 
 ## BLOCKING
 
