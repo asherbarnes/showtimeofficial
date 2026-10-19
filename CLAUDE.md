@@ -23,7 +23,7 @@ Agency standards live in `~/webdesign/CLAUDE.md` and still apply. This file cove
 - Header and footer render once, in `app/layout.tsx`.
 - **Content is data:** external URLs, address and nav are in `lib/site.ts`; programs, tiers, events and images each have a typed module. Change a fact in one place, never inline in a page.
 - Enrollment content is in `lib/enrollment.ts`: `startSteps` (universal 3 steps: Home, Get Started), `academySteps` (official 5 steps: Academy, Get Started) and `freeSessionOffer`. The free session is verified only for **small-group sessions**; never extend it to Individual Training or name a program it covers (B1). leadership bios are in `lib/images.ts` (`leadership[].summary`).
-- Pending decisions are switched in `lib/flags.ts` (`showPricing`, `showLeadStandards`).
+- Pending decisions are switched in `lib/flags.ts` (`showPricing`, `showLeadStandards`, `hallOfFameIndexable`).
 - Indexing is off unless `SITE_URL` and `ALLOW_INDEXING=true` are set (`lib/metadata.ts`). Never hard-code a domain.
 
 ## Design-system conventions
@@ -44,6 +44,7 @@ Agency standards live in `~/webdesign/CLAUDE.md` and still apply. This file cove
 - FAQs come only from the official FAQ page (PRODUCT 6.5), verbatim, in `lib/faqs.tsx`. Never add questions. Never publish Mindbody click-paths. Use `FaqAccordion` (native `<details>`) for any FAQ or policy list.
 - `components/sections/WaiverText.tsx` is legal text copied verbatim. Don't edit it. The waiver page must have **no** form controls (B6). Keep the `#complete-waiver` id.
 - Athletic Development stays out of routes and navigation until the client confirms it. Hall of Fame (`/hall-of-fame`, data in `lib/hall-of-fame.ts`) is in the main nav: the client confirmed the records on 2026-10-12. It stays noindex and out of the sitemap until `flags.hallOfFameIndexable` is set on publication approval (player consent, CONTENT_NEEDED I11).
+- `/privacy` and `/terms` (built with `LegalDocument`) are published without draft markers but are still pending owner and attorney approval (CONTENT_NEEDED B9). Their claims about this site ("no cookies, no tracking, no forms") must stay true: adding analytics, embeds or any form means updating the Privacy Policy first. Never restate program policies there; link to `/memberships#policies` and `/faqs`. Don't add unconfirmed practices (retention, sharing, sale of data).
 - Missing client content uses `<Placeholder>`. Every one must be gone before launch.
 
 ## Workflow

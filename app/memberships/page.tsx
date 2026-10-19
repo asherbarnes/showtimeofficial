@@ -156,7 +156,7 @@ export default function MembershipsPage() {
         </Button>
       </Section>
 
-      <Section labelledBy="policies-heading">
+      <Section id="policies" labelledBy="policies-heading">
         <SectionHeading id="policies-heading" eyebrow="Policies" title="Cancellations, makeups and refunds" />
         <div className="max-w-4xl">
           <FaqAccordion faqs={policyFaqs} />

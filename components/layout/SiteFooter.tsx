@@ -30,6 +30,13 @@ const columns: { heading: string; links: FooterLink[] }[] = [
   },
 ];
 
+const legalLinks: FooterLink[] = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Waiver", href: "/waiver" },
+  { label: "FAQs", href: "/faqs" },
+];
+
 function FooterLinkItem({ link }: { link: FooterLink }) {
   const className = "inline-flex min-h-11 items-center gap-1.5 py-1 text-muted-dark hover:text-white hover:underline";
   if (link.href.startsWith("http")) {
@@ -123,17 +130,14 @@ export function SiteFooter() {
           <p>
             © {business.legalName} · Est. {business.established}
           </p>
-          <ul className="flex gap-6">
-            <li>
-              <Link href="/waiver" className="inline-flex min-h-11 items-center underline underline-offset-4">
-                Waiver
-              </Link>
-            </li>
-            <li>
-              <Link href="/faqs" className="inline-flex min-h-11 items-center underline underline-offset-4">
-                FAQs
-              </Link>
-            </li>
+          <ul className="flex flex-wrap justify-center gap-x-6">
+            {legalLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="inline-flex min-h-11 items-center underline underline-offset-4">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

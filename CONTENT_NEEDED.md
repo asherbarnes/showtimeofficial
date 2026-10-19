@@ -5,7 +5,7 @@ These are client questions for the Next.js rebuild, consolidated from the Phase 
 - **Facts and sources:** [`PRODUCT.md`](PRODUCT.md). Conflict IDs (C1–C12, U1–U6) refer to PRODUCT.md section 14.
 - **Migration:** [`research/migration-requirements.md`](research/migration-requirements.md)
 
-_Last updated: 2026-10-10 (pricing re-verified: B5 rewritten; official FAQs read in full: B3 rewritten, I16 updated)._
+_Last updated: 2026-10-19 (B9 legal pages added). Earlier: 2026-10-10 (pricing re-verified: B5 rewritten; official FAQs read in full: B3 rewritten, I16 updated)._
 
 **Priority**
 
@@ -161,6 +161,34 @@ _Carried over from the P0 pass._
 - **Dev?** Yes.
 - **Interim:** use the address (verified) and the Minos inquiry form. Omit phone, email and hours until confirmed.
 
+### B9. Privacy Policy, Terms of Use and children's privacy
+_Added 2026-10-19._
+
+**Current state**
+- Agency drafts at `/privacy` and `/terms`, linked from the footer legal bar. **Draft notice, noindex, sitemap gating and on-page placeholders were removed at the agency's direction (2026-10-19)**, so both pages read as final and are indexable when the site is. The gaps below are **omitted from the pages**, not marked: the Privacy Policy has no retention/security section, no hosting provider, no statement on The Grove or on selling data, and no effective date. Both pages are still unapproved by the owner and an attorney.
+- **No cookie banner and no Cookie Policy page.** The site sets no cookies, uses no browser storage, analytics or third-party requests (checked in code and in the browser, 2026-10-19). The Privacy Policy says so in a "Cookies and tracking" section. **Adding analytics (O4), embeds, a waiver form (B6) or an inquiry form means revisiting this.**
+- **No separate refund policy.** The official cancellation, make-up and refund policies stay verbatim on `/memberships#policies` and `/faqs`. The Terms point to them and don't restate them (they still conflict: C10, I12).
+- No consent checkboxes were added because the site has no forms. Consent for inquiries, registration and payments happens on Minos Rec, outside this site.
+
+**Questions for the owner**
+1. Which hosting provider will run the site, and how long does it keep server logs (B7)?
+2. Which family and athlete data can Showtime see or export from Minos Rec (e.g. card details)? Does any other system hold it: email, messaging apps, spreadsheets, the legacy Mindbody and Wix accounts?
+3. Is any family or athlete information shared with **The Grove Community Collective** (named as co-provider in the waiver, I9)?
+4. Can the policy state that Showtime does **not sell or rent** personal information or share it for advertising?
+5. Retention periods for registration records, signed waivers, photos and video, and former members' records. Who on staff can access them? (Ties to B6.)
+6. A direct privacy contact (email) so requests can be made in writing without the booking platform (B8). The draft uses the Minos inquiry form as the interim route.
+7. Confirm rights to every photo and the logo (I8, I13); the Terms' IP section depends on it.
+8. Approve both drafts and set an effective date.
+
+**Questions for an attorney**
+- Whether Showtime meets the thresholds for the California Consumer Privacy Act (CCPA/CPRA); the draft deliberately claims no specific law's compliance.
+- CalOPPA content requirements for the Privacy Policy, given the site itself collects nothing.
+- COPPA: the site collects nothing from children, and Minos is used by parents. Confirm no verifiable-parental-consent obligation falls on Showtime's site, and review Minos's own practices if children ever create accounts there.
+- Terms sections 7–9 (disclaimer, limitation of liability, governing law and venue, which mirrors the waiver's Santa Clara County clause).
+- Whether the waiver's photo/video and personal-information releases (verbatim, B6) are adequate consent for publishing minors' images and names, including the Hall of Fame (I11) and the "revoked in writing prior to participation" limit.
+
+**Done when:** the owner and attorney approve both pages and the answers above are written into them (including a retention/security section and an effective date).
+
 ---
 
 ## IMPORTANT
@@ -181,7 +209,7 @@ _Carried over from the P0 pass._
 | I12 | Policy text: refund wording for days 14–15; how "no roll-over" relates to the makeup bank; confirm the medical-pause and coach-cancellation rules | Ambiguous policies cause disputes | FAQs, Memberships | Yes | Publish verbatim, with no reinterpretation |
 | I13 | Brand (see `DESIGN.md` section 18): (a) Confirm amber **#FFAC00** as the official colour and retire the repo's burnt orange #E85D04 and cream. (b) Vector masters of the badge and any program lockups (e.g. "SHOWTIME *Academy*"). (c) The script "It's Showtime" wordmark uses the font **Escape the Ordinary**, which is licensed for personal use only: is there a commercial licence or licensed artwork? (d) The Wix site also uses **Netflix Sans** (proprietary to Netflix) and SF Pro (Apple-only), which can't move to the new site. Approve Figtree as the replacement body/UI face, or confirm an owned Avenir web licence. | Brand consistency; font licensing | All | Yes | Build with amber, Anton + Figtree; omit the script wordmark until (c) is resolved |
 | I14 | Keep "South Bay's Premier Training Program"? | Unsubstantiated superlative (U4) | Home, metadata | Yes | Use specific, provable claims |
-| I15 | Safety and trust: coach background checks, SafeSport or other training, code of conduct, a privacy policy, parent communication norms? | Parents of minors expect this | About, FAQs, footer | Yes | Omit until provided |
+| I15 | Safety and trust: coach background checks, SafeSport or other training, code of conduct, parent communication norms? | Parents of minors expect this | About, FAQs, footer | Yes | Omit until provided. The privacy policy is now tracked in B9. |
 | I16 | Repo-only FAQs (Academy days, program difference, location, roll-over): approve or remove? | Unverified, and "Mon–Thu & Sat" conflicts with Minos Fridays. None appear on the official FAQ page (8 questions). | FAQs | Yes | **Implemented:** only the 8 official FAQs are on `/faqs`; the repo-only FAQs are excluded |
 
 ### I11 detail: Hall of Fame
@@ -224,7 +252,7 @@ _Carried over from the P0 pass._
 | O1 | Athletic Development: launch timeline, format, lead coach (Coach Kimo?), price? | Show only when real | Programs | Yes | A "Coming soon" mention on `/programs` only; no page |
 | O2 | Events: upcoming events, how RSVPs will work after Wix Events, what CYS is, event photos | Events page content | Events | Yes | Empty state plus past events |
 | O3 | Confirm the official YouTube channel (`@Showtimebasketballacademy`); any other socials | Footer accuracy (the Wix link points to Wix's channel) | Footer | Yes | Instagram and TikTok only, plus YouTube if confirmed |
-| O4 | Analytics or conversion tracking wanted (e.g. outbound clicks to Minos)? | Measure the funnel; may need a privacy notice | All | Yes | None |
+| O4 | Analytics or conversion tracking wanted (e.g. outbound clicks to Minos)? | Measure the funnel; changes the Privacy Policy's cookie section and may require consent (B9) | All | Yes | None |
 | O5 | Should court rentals (on Showtime's Minos account) appear on the Showtime site? | Possibly The Grove's business | Footer, Contact | Yes | Omit |
 | O6 | Access to the Google Business Profile, to align the name, address, phone and website | Local SEO | n/a | Yes | n/a |
 | O7 | Player pathway or outcome stories (college or pro), beyond the Hall of Fame | Trust | About, Home | Yes | Omit |
