@@ -16,7 +16,7 @@ const program = getProgram("individual-training");
 export const metadata: Metadata = pageMetadata({
   title: "Individual Training | 1-on-1 Basketball Training in San Jose",
   description:
-    "Focused 1:1 and small-group individual training in San Jose for athletes refining specific mechanics, habits, or areas of their game.",
+    "Focused 1-on-1 individual training in San Jose for athletes refining specific mechanics, habits, or areas of their game.",
   path: program.href,
 });
 
@@ -34,7 +34,7 @@ export default function IndividualTrainingPage() {
         title="Individual Training"
         lead={program.description[0]}
         facts={[
-          { label: "Format", value: "1:1 & small group" },
+          { label: "Format", value: "1:1" },
           { label: "Length", value: "60 minutes" },
           { label: "Coach levels", value: "Academy Coach or Master Coach" },
         ]}
